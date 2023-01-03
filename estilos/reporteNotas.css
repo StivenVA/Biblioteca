@@ -1,0 +1,48 @@
+body{
+    background: linear-gradient(to right, #e2eafc, #022b3a);
+    font-family: Georgia;
+}  
+
+#table-container{
+    position: absolute;
+    top: 30px;
+    left: 250px;
+	margin: 150px auto;
+	width: 800px;
+	border-radius: 20px;
+}
+
+table{
+	background-color: white;
+	text-align: left;
+	border-collapse: collapse;
+	width: 100%;
+	border-radius: 20px;
+}
+
+th, td{
+	padding: 20px;
+}
+
+thead{
+	background: #B993D6;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #8CA6DB, #B993D6);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	font-size: 15px;
+	border-bottom: solid 1px #0F362D;
+	color: #0d1b2a;
+}
+
+tr:hover td{
+	background-color: #8CA6DB;
+}
+
+.home{
+    background: none;
+    border: none;
+
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+
