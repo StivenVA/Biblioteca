@@ -1,3 +1,3 @@
 <?php
-echo "haskdhas";
+echo "has";
 ?>
