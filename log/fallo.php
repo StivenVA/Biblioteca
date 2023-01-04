@@ -38,7 +38,8 @@
         </div>
         </div>  
     </div>
-    <script src="../javascript/script.js">
+    
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../javascript/script.js">
  </body>
  </html>

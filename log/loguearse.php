@@ -14,7 +14,7 @@
             header("location:../admin/admin.php");
         }
         else{
-           header("location:../selectCursos.php");
+           header("location:../biblioteca.php");
         }   
     }else{
         header("location:fallo.php");
