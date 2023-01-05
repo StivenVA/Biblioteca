@@ -15,6 +15,7 @@ include_once("conexion.php");
 
     <link rel="stylesheet" href="estilos/insertarE.css">
     <link rel="stylesheet" href="estilos/loader.css">
+    <script src="https://kit.fontawesome.com/88f3573231.js"></script>
     <title>biblioteca</title>
 </head>
     <br>
@@ -29,6 +30,7 @@ include_once("conexion.php");
           <th>Editorial</th>
           <th>Categoria</th>
           <th>Disponibles</th>
+          <th>Solicitar</th>
         </tr>
       </thead>
       <tbody>
@@ -46,6 +48,11 @@ include_once("conexion.php");
           <td><?php echo $mostrar->nomb_edi; ?></td>
           <td><?php echo $mostrar->categoria; ?></td>
           <td><?php echo $mostrar->cant_dis; ?></td>
+          <td>
+            <button type="button" id="botontabla" data-nombre="<?php echo $mostrar->titulo ?>" data-codigo="<?php echo $mostrar->nombre_autor ?>">
+            <i class="fa-solid fa-books"></i>
+            </button>
+          </td>
         </tr>
       <?php } ?>
       </tbody>
@@ -57,6 +64,7 @@ include_once("conexion.php");
           <th>Editorial</th>
           <th>Categoria</th>
           <th>Disponibles</th>
+          <th>Solicitar</th>
         </tr>
       </tfoot>
     </table>
