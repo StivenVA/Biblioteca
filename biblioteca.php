@@ -10,16 +10,14 @@
 </head>
 
 <body>
-        <div>
-            <form method="POST" action="/buscar/buscar.php">
-                <select name="cat">
-                    <option value=0></option>
-                    <option value=1>Titulo</option>
-                    <option value=2>Autor</option>
-                    <option value=3>Categoria</option>
-                    <option value=4>Editorial</option>
-                    
-                </select>
+        <div class="container">
+                 <form method="POST" action="buscar/buscar.php" class="navbar navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">       
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
         </div>
+
 </body>
 </html>
