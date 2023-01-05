@@ -13,9 +13,7 @@ include_once("conexion.php");
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
 
-    <link rel="stylesheet" href="estilos/insertarE.css">
-    <link rel="stylesheet" href="estilos/loader.css">
-    <script src="https://kit.fontawesome.com/88f3573231.js"></script>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <title>biblioteca</title>
 </head>
     <br>
@@ -49,8 +47,8 @@ include_once("conexion.php");
           <td><?php echo $mostrar->categoria; ?></td>
           <td><?php echo $mostrar->cant_dis; ?></td>
           <td>
-            <button type="button" id="botontabla" data-nombre="<?php echo $mostrar->titulo ?>" data-codigo="<?php echo $mostrar->nombre_autor ?>">
-            <i class="fa-solid fa-books"></i>
+            <button type="button" id="botontabla" data-nombre="<?php echo $mostrar->titulo ?>" data-codigo="<?php echo $mostrar->nombre_autor ?>" href="">
+            <i class="fa-solid fa-book"></i>
             </button>
           </td>
         </tr>
