@@ -25,15 +25,14 @@ include_once("conexion.php");
       </div>
       <div class="modal-body">
         <form action="prestamos/prestamo.php" method="POST">
-        ¿Desea pedir prestado <input id="recibirnombre" type="text" name ="nombre_prueba" disabled class="text-center">  de <input id="recibircodigo" type="text" name ="nombre_prueba" disabled class="text-center">?
+        ¿Desea pedir prestado <input id="recibirnombre" type="text" name ="nombre_prueba" disabled class="text-center">? Recuerde que el libro deberá ser devuelto en 10 días hábiles.
       </div>
-        <div class="modal-footer">
-          <button name="codigo_prueba" button type="button" class="btn btn-success">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
-                  <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
-              </svg>Eliminar
-          </button> 
+        <div class="modal-footer">        
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button name="codigo_prueba" type="submit" class="btn btn-success" id="recibircodigo">  
+              <i class="fa-solid fa-check"></i>
+              Aceptar
+          </button> 
         </div>
       </div>
       </form>
@@ -57,7 +56,7 @@ include_once("conexion.php");
       </thead>
       <tbody>
         <?php 
-          $sql="select titulo,fecha_pub,nombre_autor,nomb_edi,cant_dis,categoria from escribe es,autores a,editorial e,libros l, ejemplar ej where es.cod_aut=a.cod_aut and es.isbn=l.isbn and l.cod_edi=e.cod_edi and ej.isbn=l.isbn";
+          $sql="select cod_ejem,titulo,fecha_pub,nombre_autor,nomb_edi,cant_dis,categoria from escribe es,autores a,editorial e,libros l, ejemplar ej where es.cod_aut=a.cod_aut and es.isbn=l.isbn and l.cod_edi=e.cod_edi and ej.isbn=l.isbn";
           $result=pg_query($sql);
           $contar=1;
           while($mostrar=pg_fetch_object($result)){
@@ -71,7 +70,7 @@ include_once("conexion.php");
           <td><?php echo $mostrar->categoria; ?></td>
           <td><?php echo $mostrar->cant_dis; ?></td>
           <td>
-            <button type="button" id="botontabla" data-bs-target="#modal"  data-bs-toggle="modal" data-nombre="<?php echo $mostrar->titulo ?>" data-codigo="<?php echo $mostrar->nombre_autor ?>">
+            <button type="button" id="botontabla" data-bs-target="#modal"  data-bs-toggle="modal" data-nombre="<?php echo $mostrar->titulo ?>" data-codigo="<?php echo $mostrar->cod_ejem ?>">
             <i class="fa-solid fa-book"></i>
             </button>
           </td>
@@ -80,6 +79,7 @@ include_once("conexion.php");
       </tbody>
       <tfoot>
         <tr>
+        <th>#</th>
         <th>Titulo</th>
           <th>Autor</th>
           <th>Publicacion</th>
