@@ -1,8 +1,8 @@
 $(document).ready(function () {
     $('#example').DataTable({
         "language": {
-            "lengthMenu": "Mostrar _MENU_ libros por página",
-            "zeroRecords": "",
+            "lengthMenu": "Mostrar _MENU_ por página",
+            "zeroRecords": "Aún no ha solicitado un préstamo",
             "info": "Mostrando la pagina _PAGE_ de _PAGES_",
             "infoEmpty": "No records available",
             "infoFiltered": "(Filtrado de _MAX_ registros totales)",
