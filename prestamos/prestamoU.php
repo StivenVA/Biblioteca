@@ -18,21 +18,39 @@ session_start();
     <title>biblioteca</title>
 </head>
 
-  <div class="container"> 
-    <form action="multas.php">
-        <button type="submit" id="botontabla">
-        <i class="fa-solid fa-dollar-sign"></i>
-            </button>
-    </form>
-  </div>
-<?php 
+<div class="container"> 
+    
+</div>
+        <?php   
           $user=$_SESSION['codigo_user'];
           $sql="select nomb_user,fecha_pres,fecha_dev,titulo from prestamo p, usuarios u,ejemplar e, libros l where l.isbn=e.isbn and e.cod_ejem=p.cod_ejem and u.cod_usuario=p.cod_usuario  and u.cod_usuario='$user'";
           $result=pg_query($sql);
-          $contar=1;
-          ?>
+          $nom="select nomb_user from usuarios where cod_usuario='$user'";
+          $nom=pg_query($nom);
+          $nomb=pg_fetch_object($nom);
+        ?>
+        <div class="container">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a><i class="fa-solid fa-user"></i> <?php echo $nomb->nomb_user;?> </a>
+      <form action="multas.php">
+        <button type="submit">
+          <i class="fa-solid fa-dollar-sign"></i> Multas
+        </button>
+      </form>
 
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <form action="../biblioteca.php">
+           <button type="submit">
+            <i class="fa-solid fa-bookmark"></i> Colección
+           </button>
+           </form>
+        </div>
+</div>
+  </nav>
+</div>
     <br>
+
   <div id="table-container" class="container">
     <table id="example" class="table table-striped" style="width:100%">
       <thead>
@@ -46,6 +64,7 @@ session_start();
       <tbody>
         
           <?php 
+          $contar=1;
           while($mostrar=pg_fetch_object($result)){
         ?>
         <tr>
@@ -68,11 +87,7 @@ session_start();
   </div>
 
   <div class="container"> 
-    <form action="../biblioteca.php">
-        <button type="submit" id="botontabla">
-        <i class="fa-solid fa-bookmark"></i>
-            </button>
-    </form>
+    
   </div>
 
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>

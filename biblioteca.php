@@ -40,7 +40,7 @@ include_once("conexion.php");
 </div>
 
     <br>
-  <div id="table-container">
+  <div id="table-container" class="container">
     <table id="example" class="table table-striped" style="width:100%">
       <thead>
         <tr>
