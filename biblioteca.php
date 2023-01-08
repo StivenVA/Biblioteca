@@ -56,7 +56,7 @@ include_once("conexion.php");
       </thead>
       <tbody>
         <?php 
-          $sql="select cod_ejem,titulo,fecha_pub,nombre_autor,nomb_edi,cant_dis,categoria from escribe es,autores a,editorial e,libros l, ejemplar ej where es.cod_aut=a.cod_aut and es.isbn=l.isbn and l.cod_edi=e.cod_edi and ej.isbn=l.isbn";
+          $sql="select cod_ejem,titulo,fecha_pub,nombre_autor,nomb_edi,cant_dis,categoria from escribe es,autores a,editorial e,libros l, ejemplar ej where es.cod_aut=a.cod_aut and es.isbn=l.isbn and l.cod_edi=e.cod_edi and ej.isbn=l.isbn order by titulo";
           $result=pg_query($sql);
           $contar=1;
           while($mostrar=pg_fetch_object($result)){
