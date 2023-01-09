@@ -10,7 +10,7 @@ $object=pg_fetch_object($consulta);
 $cant=pg_num_rows($consulta);
 $user=$_SESSION['codigo_user'];
 if($cant>0){
-   $query="insert into prestamo values('$ejem','$user',current_date,current_date+10,'prestado')";
+   $query="insert into prestamo values('$ejem','$user',current_date,current_date+10,'Prestado')";
    $consul=pg_query($query); 
    $query="update ejemplar set cant_dis=cant_dis-1 where cod_ejem='$ejem'";
    $consul=pg_query($query);

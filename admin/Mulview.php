@@ -24,7 +24,7 @@ session_start();
 </div>
         <?php   
           $user=$_SESSION['codigo_user'];
-          $sql="select nomb_user,estado,titulo,fecha_pres,fecha_dev,p.cod_usuario,p.cod_ejem from prestamo p,usuarios u,ejemplar e,libros l where u.cod_usuario=p.cod_usuario and e.cod_ejem=p.cod_ejem and l.isbn=e.isbn";
+          $sql="select nomb_user,estado,titulo,fecha_mul,motivo,deuda,m.cod_usuario,m.cod_ejem from multa m,usuarios u,ejemplar e,libros l where u.cod_usuario=m.cod_usuario and e.cod_ejem=m.cod_ejem and l.isbn=e.isbn";
           $result=pg_query($sql);
           $nom="select nomb_user from usuarios where cod_usuario='$user'";
           $nom=pg_query($nom);
@@ -67,10 +67,12 @@ session_start();
           <th>#</th>
           <th>Usuario</th>
           <th>Título</th>
-          <th>fecha de prestamo</th>
-          <th>fecha de devolucion</th>
+          <th>motivo</th>
+          <th>deuda</th>
           <th>Estado</th>
-          <th>Devolucion</th> 
+          <th>fecha</th>
+          <th>Elimnar</th>
+          <th>modificar</th>
         </tr>
       </thead>
       <tbody>
@@ -83,38 +85,57 @@ session_start();
           <th scope="row"><?php echo $contar++; ?></th>
           <td><?php echo $mostrar->nomb_user; ?></td>
           <td><?php echo $mostrar->titulo; ?></td>
-          <td><?php echo $mostrar->fecha_pres; ?></td>
-          <td><?php echo $mostrar->fecha_dev; ?></td>
+          <td><?php echo $mostrar->motivo; ?></td>
+          <td><?php echo $mostrar->deuda; ?></td>
           <td><?php echo $mostrar->estado; ?></td>
+          <td><?php echo $mostrar->fecha_mul; ?></td>
           <td><button type="button" id="botontabla" class="btn btn-outline-success" data-bs-target="#modal"  data-bs-toggle="modal" data-titulo="<?php echo $mostrar->titulo; ?>" data-cod="<?php echo $mostrar->cod_ejem; ?>" data-user="<?php echo $mostrar->cod_usuario; ?>" data-fecha="<?php echo $mostrar->fecha_pres; ?>" >
-          <i class="fa-solid fa-clipboard-check"></i>
+          <i class="fa-solid fa-eraser"></i> Eliminar
+            </button></td>
+            <td><button type="button" id="botontabla" class="btn btn-outline-success" data-bs-target="#modal"  data-bs-toggle="modal" data-titulo="<?php echo $mostrar->titulo; ?>" data-cod="<?php echo $mostrar->cod_ejem; ?>" data-user="<?php echo $mostrar->cod_usuario; ?>" data-fecha="<?php echo $mostrar->fecha_pres; ?>" ><i class="fa-solid fa-eraser"></i>Editar
             </button></td>
         </tr>
       <?php } ?>
       </tbody>
-      <tfoot>
-        <tr>
-        <th>#</th>
-        <th>Usuario</th>
-          <th>Título</th>
-          <th>fecha de prestamo</th>
-          <th>fecha de devolucion</th> 
-          <th>Estado</th>
-          <th>Devolucion</th>
-        </tr>
-      </tfoot>
+ 
     </table>
   </div>
 
   <div class="container"> 
-    <form action="Mulview.php">
-  <button type="submit" id="botontabla" class="btn btn-outline-success">
+  <button type="button" id="botontabla" class="btn btn-outline-success" data-bs-target="#modal"  data-bs-toggle="modal" data-user="<?php?>" data-ejem="<?php?>">
           <i class="fa-solid fa-wallet"></i>
             </button>
-          </form>
   </div>
-            <!--Este es el modal para la verificafcion de la devolucion-->
+            <!--Este es el modal para la modificacion de una multa-->
 
+<div class="modal" tabindex="-1" id="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Verificacion del libro <input id="titulo" type="text" name ="titulo" disabled class="text-center" ></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form action="genmulta.php" method="POST" class="form-box">
+      <div class="modal-body">
+        <p>Estado: 
+        <select name='estado' id="est" class="form-select form-select-sm" aria-label=".form-select-sm example" required data-estado>
+            <option value="" selected disabled>Seleccione una opción</option>
+            <option value="Regresado" >Regresado </option>
+            <option value="Dañado" >Dañado </option>
+            <option value="Retrasado " >Retrasado </option>
+          </select>
+          </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="submit" name='verificar' class="btn btn-primary" id="aceptar" >Aceptar</button>
+      </div>
+          </form>
+    </div>
+  </div>
+</div>
+
+            <!-- Este es el modal que confirma el eliminar una multa-->
 <div class="modal" tabindex="-1" id="modal">
   <div class="modal-dialog">
     <div class="modal-content">
