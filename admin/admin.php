@@ -15,13 +15,10 @@ session_start();
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
 
     <script src="../fontawesome/js/all.min.js"></script>
-    <title>biblioteca</title>
+    <title>Admin</title>
 </head>
 
-<div class="container"> 
-    
-</div>
-        <?php   
+<?php   
           $user=$_SESSION['codigo_user'];
           $sql="select titulo,autor,nomb_user,fecha_pres,fecha_dev from ='$user'";
           $result=pg_query($sql);
@@ -29,19 +26,28 @@ session_start();
           $nom=pg_query($nom);
           $nomb=pg_fetch_object($nom);
         ?>
+
+<div class="container"> 
+    
+</div>
+      
         <div class="container">
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a><i class="fa-solid fa-user"></i> <?php echo $nomb->nomb_user;?> </a>
-      <form action="multas.php">
-        <button type="submit">
-          <i class="fa-solid fa-dollar-sign"></i> Multas
+      <form action="admin.php">
+            <button type="submit" class="btn btn-dark" >
+              <i class="fa-solid fa-user"></i> <?php echo $nomb->nomb_user;?>
+            </button>
+      </form>
+      <form action="Multas.php">
+        <button type="submit" class="btn btn-dark">
+        <i class="fa-solid fa-hands"></i> Prestamos
         </button>
       </form>
 
         <div class="collapse navbar-collapse" id="navbarNav">
-          <form action="../biblioteca.php">
-           <button type="submit">
+          <form action="coleccion.php">
+           <button type="submit" class="btn btn-dark">
             <i class="fa-solid fa-bookmark"></i> Colección
            </button>
            </form>

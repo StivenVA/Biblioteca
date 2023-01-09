@@ -15,7 +15,7 @@ session_start();
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
 
     <script src="../fontawesome/js/all.min.js"></script>
-    <title>biblioteca</title>
+    <title>prestamos</title>
 </head>
 
 <div class="container"> 
