@@ -32,16 +32,20 @@ session_start();
         <div class="container">
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a><i class="fa-solid fa-user"></i> <?php echo $nomb->nomb_user;?> </a>
+    <form action="prestamoU.php">
+            <button type="submit" class="btn btn-dark" >
+              <i class="fa-solid fa-user"></i> <?php echo $nomb->nomb_user;?>
+            </button>
+      </form>
       <form action="multas.php">
-        <button type="submit">
+        <button type="submit" class="btn btn-dark">
           <i class="fa-solid fa-dollar-sign"></i> Multas
         </button>
       </form>
 
         <div class="collapse navbar-collapse" id="navbarNav">
           <form action="../biblioteca.php">
-           <button type="submit">
+           <button type="submit" class="btn btn-dark">
             <i class="fa-solid fa-bookmark"></i> Colección
            </button>
            </form>

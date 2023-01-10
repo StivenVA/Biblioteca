@@ -2,18 +2,18 @@
 include_once("../conexion.php");
 
 $loan = $_POST['verificar'];
-$estado=$_POST['estado'];
-
-
-$consulta = "select cod_ejem,cod_usuario from prestamo where $loan";
-$consulta = pg_query($consulta);
-$ejem = pg_fetch_object($consulta);
 
 $request = "select estado from prestamo where $loan";
 $request = pg_query($request);
 $state = pg_fetch_object($request);
 
 if($state->estado=="Prestado"){
+
+    $estado=$_POST['estado'];
+    $consulta = "select cod_ejem,cod_usuario from prestamo where $loan";
+    $consulta = pg_query($consulta);
+    $ejem = pg_fetch_object($consulta);
+
     switch ($estado) {
         case 'Regresado':
             $query="update prestamo set estado='$estado' where $loan";
@@ -33,7 +33,7 @@ if($state->estado=="Prestado"){
         case 'Retrasado':
             $query="update prestamo set estado='$estado' where $loan";
             $query=pg_query($query);
-           $query="insert into multa values('$ejem->cod_usuario','$ejem->cod_ejem',20000,'Retrasado','Pendiente',current_date)";
+           $query="insert into multa values('$ejem->cod_usuario','$ejem->cod_ejem',15000,'Retrasado','Pendiente',current_date)";
            $consul=pg_query($query);
             header("location:Mulview.php");
            break;

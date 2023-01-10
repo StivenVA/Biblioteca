@@ -52,6 +52,14 @@ session_start();
            </button>
            </form>
         </div>
+
+        <div  id="navbarNav">
+          <form action="../log/logout.php">
+           <button type="submit" class="btn btn-dark">
+           <i class="fa-solid fa-power-off"></i> Cerrar sesion
+           </button>
+           </form>
+        </div>
 </div>
   </nav>
 </div>

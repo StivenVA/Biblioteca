@@ -15,7 +15,7 @@ session_start();
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
 
     <script src="../fontawesome/js/all.min.js"></script>
-    <title>biblioteca</title>
+    <title>Colección</title>
 </head>
 
 <?php   
@@ -64,7 +64,7 @@ session_start();
       </div>
       <div class="modal-body">
         <form action="prestamos/prestamo.php" method="POST">
-        ¿Desea pedir prestado <input id="recibirnombre" type="text" name ="nombre_prueba" disabled class="text-center">? Recuerde que el libro deberá ser devuelto en 10 días hábiles.
+        ¿Desea eliminar PERMANENTEMENTE <input id="recibirnombre" type="text" name ="nombre_prueba" disabled class="text-center">?
       </div>
         <div class="modal-footer">        
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -90,12 +90,12 @@ session_start();
           <th>Editorial</th>
           <th>Categoria</th>
           <th>Disponibles</th>
-          <th>Solicitar</th>
+          <th>Eliminar</th>
         </tr>
       </thead>
       <tbody>
         <?php 
-          $sql="select cod_ejem,titulo,fecha_pub,nombre_autor,nomb_edi,cant_dis,categoria from escribe es,autores a,editorial e,libros l, ejemplar ej where es.cod_aut=a.cod_aut and es.isbn=l.isbn and l.cod_edi=e.cod_edi and ej.isbn=l.isbn order by titulo";
+          $sql="select l.isbn,titulo,fecha_pub,nombre_autor,nomb_edi,cant_dis,categoria from escribe es,autores a,editorial e,libros l, ejemplar ej where es.cod_aut=a.cod_aut and es.isbn=l.isbn and l.cod_edi=e.cod_edi and ej.isbn=l.isbn order by titulo";
           $result=pg_query($sql);
           $contar=1;
           while($mostrar=pg_fetch_object($result)){
@@ -109,8 +109,8 @@ session_start();
           <td><?php echo $mostrar->categoria; ?></td>
           <td><?php echo $mostrar->cant_dis; ?></td>
           <td>
-            <button type="button" id="botontabla" data-bs-target="#modal"  data-bs-toggle="modal" data-nombre="<?php echo $mostrar->titulo ?>" data-codigo="<?php echo $mostrar->cod_ejem ?>">
-            <i class="fa-solid fa-book"></i>
+            <button type="button" id="botontabla" class="btn btn-outline-danger" data-bs-target="#modal"  data-bs-toggle="modal" data-nombre="<?php echo $mostrar->titulo ?>" data-codigo="<?php echo $mostrar->isbn ?>">
+            <i class="fa-solid fa-delete-left"></i>
             </button>
           </td>
         </tr>
@@ -125,13 +125,13 @@ session_start();
           <th>Editorial</th>
           <th>Categoria</th>
           <th>Disponibles</th>
-          <th>Solicitar</th>
+          <th>Eliminar</th>
         </tr>
       </tfoot>
     </table>
   </div>
   
-  <script src="j../avascript/script.js"></script>   
+  <script src="../javascript/script.js"></script>   
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>

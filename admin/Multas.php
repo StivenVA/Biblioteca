@@ -24,7 +24,7 @@ session_start();
 </div>
         <?php   
           $user=$_SESSION['codigo_user'];
-          $sql="select nomb_user,estado,titulo,fecha_pres,fecha_dev,p.cod_usuario,p.cod_ejem from prestamo p,usuarios u,ejemplar e,libros l where u.cod_usuario=p.cod_usuario and e.cod_ejem=p.cod_ejem and l.isbn=e.isbn";
+          $sql="select tipo,nomb_user,telefono,estado,titulo,fecha_pres,fecha_dev,p.cod_usuario,p.cod_ejem from prestamo p,usuarios u,ejemplar e,libros l where u.cod_usuario=p.cod_usuario and e.cod_ejem=p.cod_ejem and l.isbn=e.isbn";
           $result=pg_query($sql);
           $nom="select nomb_user from usuarios where cod_usuario='$user'";
           $nom=pg_query($nom);
@@ -40,7 +40,6 @@ session_start();
             </button>
       </form>
 
-      <form action="Multas.php">
       <form action="Multas.php">
         <button type="submit" class="btn btn-dark">
         <i class="fa-solid fa-hands"></i> Prestamos
@@ -66,6 +65,8 @@ session_start();
         <tr>
           <th>#</th>
           <th>Usuario</th>
+          <th>Tipo de usuario</th>
+          <th>Telefono</th>
           <th>Título</th>
           <th>fecha de prestamo</th>
           <th>fecha de devolucion</th>
@@ -78,10 +79,12 @@ session_start();
           <?php 
           $contar=1;
           while($mostrar=pg_fetch_object($result)){
-        ?>
-        <tr>
+          ?>
+          <tr>
           <th scope="row"><?php echo $contar++; ?></th>
           <td><?php echo $mostrar->nomb_user; ?></td>
+          <td><?php echo $mostrar->tipo; ?></td>
+          <td><?php echo $mostrar->telefono; ?></td>
           <td><?php echo $mostrar->titulo; ?></td>
           <td><?php echo $mostrar->fecha_pres; ?></td>
           <td><?php echo $mostrar->fecha_dev; ?></td>
@@ -96,6 +99,8 @@ session_start();
         <tr>
         <th>#</th>
         <th>Usuario</th>
+        <th>Tipo de usuario</th>
+        <th>Telefono</th>
           <th>Título</th>
           <th>fecha de prestamo</th>
           <th>fecha de devolucion</th> 
@@ -109,7 +114,7 @@ session_start();
   <div class="container"> 
     <form action="Mulview.php">
   <button type="submit" id="botontabla" class="btn btn-outline-success">
-          <i class="fa-solid fa-wallet"></i>
+          <i class="fa-solid fa-wallet"></i> Ver todas las multas
             </button>
           </form>
   </div>

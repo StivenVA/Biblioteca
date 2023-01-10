@@ -1,5 +1,6 @@
 <?php
 include_once("conexion.php");
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +17,43 @@ include_once("conexion.php");
     <script src="fontawesome/js/all.min.js"></script>
     <title>biblioteca</title>
 </head>
+<?php   
+          $user=$_SESSION['codigo_user'];
+          $nom="select nomb_user from usuarios where cod_usuario='$user'";
+          $nom=pg_query($nom);
+          $nomb=pg_fetch_object($nom);
+        ?>
+
+
+<div class="container">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+    
+    <form action="prestamos/prestamoU.php">
+            <button type="submit" class="btn btn-dark" >
+              <i class="fa-solid fa-user"></i> <?php echo $nomb->nomb_user;?>
+            </button>
+      </form>
+
+      <form action="prestamos/multas.php">
+        <button type="submit" class="btn btn-dark">
+        <i class="fa-solid fa-dollar-sign"></i> Multas
+        </button>
+      </form>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <form action="biblioteca.php">
+           <button type="submit" class="btn btn-dark">
+            <i class="fa-solid fa-bookmark"></i> Colección
+           </button>
+           </form>
+           </form>
+        </div>
+</div>
+  </nav>
+</div>
+    <br>
+
 <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
