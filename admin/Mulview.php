@@ -89,7 +89,7 @@ session_start();
           <td><?php echo $mostrar->deuda; ?></td>
           <td><?php echo $mostrar->estado; ?></td>
           <td><?php echo $mostrar->fecha_mul; ?></td>
-          <td><button type="button" id="Delete" class="btn btn-outline-success" data-bs-target="#Eliminar"  data-bs-toggle="modal" data-titulo="<?php echo $mostrar->titulo; ?>" data-cod="<?php echo $mostrar->cod_ejem; ?>" data-user="<?php echo $mostrar->cod_usuario; ?>" data-fecha="<?php echo $mostrar->fecha_mul; ?>" >
+          <td><button type="button" id="Delete" class="btn btn-outline-success" data-bs-target="#Eliminar"  data-bs-toggle="modal"  data-cod="<?php echo $mostrar->cod_ejem; ?>" data-user="<?php echo $mostrar->cod_usuario; ?>" data-fecha="<?php echo $mostrar->fecha_mul; ?>" >
           <i class="fa-solid fa-eraser"></i>Eliminar
             </button></td>
             <td><button type="button" id="Edit" class="btn btn-outline-success" data-bs-target="#modal"  data-bs-toggle="modal"  data-cod="<?php echo $mostrar->cod_ejem; ?>" data-user="<?php echo $mostrar->cod_usuario; ?>" data-fecha="<?php echo $mostrar->fecha_mul; ?>" ><i class="fa-regular fa-pen-to-square"></i>Editar

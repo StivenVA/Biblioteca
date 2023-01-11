@@ -24,7 +24,7 @@ session_start();
 </div>
         <?php   
           $user=$_SESSION['codigo_user'];
-          $sql="select tipo,nomb_user,telefono,estado,titulo,fecha_pres,fecha_dev,p.cod_usuario,p.cod_ejem from prestamo p,usuarios u,ejemplar e,libros l where u.cod_usuario=p.cod_usuario and e.cod_ejem=p.cod_ejem and l.isbn=e.isbn";
+          $sql="select tipo,nomb_user,numero,telefono,estado,titulo,fecha_pres,fecha_dev,p.cod_usuario,p.cod_ejem from prestamo p,usuarios u,ejemplar e,libros l where u.cod_usuario=p.cod_usuario and e.cod_ejem=p.cod_ejem and l.isbn=e.isbn";
           $result=pg_query($sql);
           $nom="select nomb_user from usuarios where cod_usuario='$user'";
           $nom=pg_query($nom);
@@ -70,6 +70,7 @@ session_start();
           <th>Título</th>
           <th>fecha de prestamo</th>
           <th>fecha de devolucion</th>
+          <th>sala</th>
           <th>Estado</th>
           <th>Devolucion</th> 
         </tr>
@@ -88,6 +89,11 @@ session_start();
           <td><?php echo $mostrar->titulo; ?></td>
           <td><?php echo $mostrar->fecha_pres; ?></td>
           <td><?php echo $mostrar->fecha_dev; ?></td>
+          <td><?php if($mostrar->numero=="No"){
+            echo "Externo";
+            }else{
+              echo $mostrar->numero;
+            } ?></td>
           <td><?php echo $mostrar->estado; ?></td>
           <td><button type="button" id="botontabla" class="btn btn-outline-success" data-bs-target="#modal"  data-bs-toggle="modal" data-titulo="<?php echo $mostrar->titulo; ?>" data-cod="<?php echo $mostrar->cod_ejem; ?>" data-user="<?php echo $mostrar->cod_usuario; ?>" data-fecha="<?php echo $mostrar->fecha_pres; ?>" >
           <i class="fa-solid fa-clipboard-check"></i>
@@ -103,7 +109,8 @@ session_start();
         <th>Telefono</th>
           <th>Título</th>
           <th>fecha de prestamo</th>
-          <th>fecha de devolucion</th> 
+          <th>fecha de devolucion</th>
+          <th>sala</th> 
           <th>Estado</th>
           <th>Devolucion</th>
         </tr>

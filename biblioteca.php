@@ -22,6 +22,8 @@ session_start();
           $nom="select nomb_user from usuarios where cod_usuario='$user'";
           $nom=pg_query($nom);
           $nomb=pg_fetch_object($nom);
+          $sala = "select numero,capacidad from salas";
+          $sala = pg_query($sala);
         ?>
 
 
@@ -63,7 +65,19 @@ session_start();
       </div>
       <div class="modal-body">
         <form action="prestamos/prestamo.php" method="POST">
-        ¿Desea pedir prestado <input id="recibirnombre" type="text" name ="nombre_prueba" disabled class="text-center">? Recuerde que el libro deberá ser devuelto en 10 días hábiles.
+        <p>¿Desea pedir prestado <input id="recibirnombre" type="text" name ="nombre_prueba" disabled class="text-center">? Recuerde que el libro deberá ser devuelto en 10 días hábiles en caso de préstamo externo.</p>
+        <br>
+        <p>Sala: 
+          <select name="sala" required class="form-select form-select-sm" aria-label=".form-select-sm example">
+          <option value="" selected disabled >Seleccione una opcion</option>
+            <option value="No">Externo</option>
+          <?php
+          while($object = pg_fetch_object($sala)){
+          ?><option value="<?php echo $object->numero ?>"><?php echo $object->numero ?></option>  
+          <?php } ?>
+          ?>
+          </select>
+        </p>
       </div>
         <div class="modal-footer">        
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -88,13 +102,14 @@ session_start();
           <th>Publicacion</th>
           <th>Editorial</th>
           <th>Categoria</th>
+          <th>Seccion</th>
           <th>Disponibles</th>
           <th>Solicitar</th>
         </tr>
       </thead>
       <tbody>
         <?php 
-          $sql="select cod_ejem,titulo,fecha_pub,nombre_autor,nomb_edi,cant_dis,categoria from escribe es,autores a,editorial e,libros l, ejemplar ej where es.cod_aut=a.cod_aut and es.isbn=l.isbn and l.cod_edi=e.cod_edi and ej.isbn=l.isbn order by titulo";
+          $sql="select cod_ejem,titulo,localizacion,fecha_pub,nombre_autor,nomb_edi,cant_dis,categoria from escribe es,autores a,editorial e,libros l, ejemplar ej where es.cod_aut=a.cod_aut and es.isbn=l.isbn and l.cod_edi=e.cod_edi and ej.isbn=l.isbn order by titulo";
           $result=pg_query($sql);
           $contar=1;
           while($mostrar=pg_fetch_object($result)){
@@ -106,6 +121,7 @@ session_start();
           <td><?php echo $mostrar->fecha_pub; ?></td>
           <td><?php echo $mostrar->nomb_edi; ?></td>
           <td><?php echo $mostrar->categoria; ?></td>
+          <td><?php echo $mostrar->localizacion; ?></td>
           <td><?php echo $mostrar->cant_dis; ?></td>
           <td>
             <button type="button" id="botontabla" data-bs-target="#modal"  data-bs-toggle="modal" data-nombre="<?php echo $mostrar->titulo ?>" data-codigo="<?php echo $mostrar->cod_ejem ?>">
@@ -123,6 +139,7 @@ session_start();
           <th>Publicacion</th>
           <th>Editorial</th>
           <th>Categoria</th>
+          <th>Seccion</th>
           <th>Disponibles</th>
           <th>Solicitar</th>
         </tr>

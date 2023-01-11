@@ -20,7 +20,7 @@ session_start();
 
 <?php   
           $user=$_SESSION['codigo_user'];
-          $sql="select titulo,autor,nomb_user,fecha_pres,fecha_dev from ='$user'";
+          $sql="select count(pr.cod_usuario),nomb_user as prestamo from prestamo pr,usuarios u where u.cod_usuario=pr.cod_usuario GROUP BY u.nomb_user";
           $result=pg_query($sql);
           $nom="select nomb_user from usuarios where cod_usuario='$user'";
           $nom=pg_query($nom);
