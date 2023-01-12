@@ -8,7 +8,7 @@
     <title>Inicio sesión</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"/>
     <link rel="stylesheet" href="estilos/loader.css">
-    <link rel="stylesheet" href="estilos/styles.css">
+    <link rel="stylesheet" href="estilos/estilos.css">
 </head>
 
 <body>
