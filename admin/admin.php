@@ -27,9 +27,10 @@ session_start();
           $nomb=pg_fetch_object($nom);
         ?>
 
-<div class="container"> 
-    
+<div class="container">  
 </div>
+
+
       
         <div class="container">
   <nav class="navbar navbar-expand-lg bg-body-tertiary">

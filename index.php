@@ -12,11 +12,20 @@
 </head>
 
 <body>
-<div class="m-0 vh-100 row justify-content-center align-items-center">
+
+<section>
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+        <div class="wave wave4"></div>
+    
+
+    <div class="m-0 vh-100 row justify-content-center align-items-center">
+    
             <div class="container bg-ligth text-dark col-auto p-5 text-center animated fadeIn">
 
                 <div class="login">
-                    <img src="imagenes/login.png" alt="login" class="login-img">
+                    <img src="imagenes/hombre.png" alt="login" class="login-img">
                 </div>
                 <form action="log/loguearse.php" method="POST" class="form-box">
                     <h2 class="form-title">Iniciar sesión</h2>
@@ -29,6 +38,7 @@
                 </form>
             </div>  
 </div>
+</section>
 
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 
