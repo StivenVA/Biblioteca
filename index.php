@@ -18,7 +18,18 @@
         <div class="wave wave2"></div>
         <div class="wave wave3"></div>
         <div class="wave wave4"></div>
-    
+
+
+    <div class="slider">
+        <span style="--i:1;"><img src="imagenes/img1.jpg" alt=""></span>
+        <span style="--i:2;"><img src="imagenes/img2.png" alt=""></span>
+        <span style="--i:3;"><img src="imagenes/img3.jpg" alt=""></span>
+        <span style="--i:4;"><img src="imagenes/img4.jpg" alt=""></span>
+        <span style="--i:5;"><img src="imagenes/img5.png" alt=""></span>
+        <span style="--i:6;"><img src="imagenes/img6.jpg" alt=""></span>
+        <span style="--i:7;"><img src="imagenes/img7.png" alt=""></span>
+        <span style="--i:8;"><img src="imagenes/img8.jpg" alt=""></span>
+    </div>
 
     <div class="m-0 vh-100 row justify-content-center align-items-center">
     

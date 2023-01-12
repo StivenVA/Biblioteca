@@ -1,13 +1,57 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
+.slider{
+    position: relative;
+    top: 20%;
+    left: 20%;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: rotate 30s linear infinite;
+}
+@keyframes rotate{
+    0%{
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100%{
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+
+.slider span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform:rotateY(calc(var(--i)*45deg)) translateZ(350px);
+}
+.slider span img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    object-fit: cover;
+    transition: 2s;
+}
+.slider span:hover img{
+    transform: translateY(-50px) scale(1.2);
+}
+
 section{
     position:relative;
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    background: linear-gradient(to bottom, #b8b8ff, #f5f3f4);
+    background: linear-gradient(to top, #b8b8ff, #f5f3f4);
 }
 section .wave{
     position: absolute;
@@ -65,8 +109,8 @@ section .wave.wave4{
 }
 
 .login-img{
-    height: 80px;
-    width: 80px;
+    height: 70px;
+    width: 70px;
 }
 
 .form-title{
@@ -75,7 +119,9 @@ section .wave.wave4{
     font-family: georgia;
 }
 .container{
-
+    position: absolute;
+    left: 70%;
+    bottom: 22%;
     border-radius: 60px;
     background:#b8b8ff;
 }
@@ -85,7 +131,7 @@ section .wave.wave4{
 .form-box button[type="submit"]{
     border:0px;
     background:none;
-    padding:14px 10px;
+    padding:10px 5px;
     text-align: center;
     border:2px solid #022b3a; 
     width: 190px;
