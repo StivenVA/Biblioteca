@@ -19,8 +19,7 @@
         <div class="wave wave3"></div>
         <div class="wave wave4"></div>
 
-    <div class="contenedor">
-        <div class="navbar">Biblioteca Virtual</div>
+   <h1 class="lines-effect">Biblioteca Virtual</h1>
     
 
     <div class="slider">
@@ -33,7 +32,7 @@
         <span style="--i:7;"><img src="imagenes/img7.png" alt=""></span>
         <span style="--i:8;"><img src="imagenes/img8.jpg" alt=""></span>
     </div>
-    </div>
+    
 
     <div class="m-0 vh-100 row justify-content-center align-items-center">
     
