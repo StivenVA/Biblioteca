@@ -13,6 +13,7 @@ session_start();
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="../estilos/admin.css">
 
     <script src="../fontawesome/js/all.min.js"></script>
     <title>Admin</title>
@@ -37,7 +38,8 @@ session_start();
     <div class="container-fluid">
       <form action="admin.php">
             <button type="submit" class="btn btn-dark" >
-              <i class="fa-solid fa-user"></i> <?php echo $nomb->nomb_user;?>
+              <i class="fa-solid fa-user"></i><img src="../imagenes/admin.png" class="logoadmin"> 
+               <?php echo $nomb->nomb_user;?>
             </button>
       </form>
       <form action="Multas.php">
@@ -57,7 +59,7 @@ session_start();
         <div  id="navbarNav">
           <form action="../log/logout.php">
            <button type="submit" class="btn btn-dark">
-           <i class="fa-solid fa-power-off"></i> Cerrar sesion
+           <i class="fa-solid fa-power-off"></i>Cerrar sesion
            </button>
            </form>
         </div>

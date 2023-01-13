@@ -4,12 +4,27 @@
     box-sizing: border-box;
 }
 
+.contenedor{
+    width: 100%;
+    height: 100vh;
+    
+}
+.navbar{
+    width: 50%;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-family: georgia;
+    color: #240046;
+}
+
 .slider{
     position: relative;
     top: 20%;
-    left: 20%;
-    width: 200px;
-    height: 200px;
+    left: 30%;
+    width: 150px;
+    height: 150px;
     transform-style: preserve-3d;
     animation: rotate 30s linear infinite;
 }
@@ -136,7 +151,7 @@ section .wave.wave4{
     border:2px solid #022b3a; 
     width: 190px;
     outline: none;
-    color:#1f7a8c;
+    color:#10002b;
     border-radius: 25px;
     transition: 0.25s;
 }
@@ -144,16 +159,16 @@ section .wave.wave4{
 .form-box input[type="text"]:focus,
 .form-box input[type="password"]:focus{
     width: 250px;
-    border-color:#127475;
+    border-color:#240046;
 }
 
 .form-box button[type="submit"]{
     border: 0px;
-    background: #1f7a8c;
+    background: #3d348b;
     color:#e1e5f2;
     cursor: pointer;
 }
 
 .form-box button[type="submit"]:hover{
-    background:#022b3a;
+    background:#240046;
 }
