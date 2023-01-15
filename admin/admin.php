@@ -37,21 +37,33 @@ session_start();
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <form action="admin.php">
-            <button type="submit" class="btn btn-dark" >
-              <i class="fa-solid fa-user"></i><img src="../imagenes/admin.png" class="logoadmin"> 
+            <button type="submit" class="btn" >
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <i class="fa-solid"></i><img src="../imagenes/admin.png" class="logo"> 
                <?php echo $nomb->nomb_user;?>
             </button>
       </form>
       <form action="Multas.php">
         <button type="submit" class="btn btn-dark">
-        <i class="fa-solid fa-hands"></i> Prestamos
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+        <i class="fa-solid"></i><img src="../imagenes/prestado.png" class="logopres"> Prestamos
         </button>
       </form>
 
         <div class="collapse navbar-collapse" id="navbarNav">
           <form action="coleccion.php">
            <button type="submit" class="btn btn-dark">
-            <i class="fa-solid fa-bookmark"></i> Colección
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            <i class="fa-solid"></i><img src="../imagenes/libros.png" class="logo">Colección
            </button>
            </form>
         </div>
@@ -59,7 +71,11 @@ session_start();
         <div  id="navbarNav">
           <form action="../log/logout.php">
            <button type="submit" class="btn btn-dark">
-           <i class="fa-solid fa-power-off"></i>Cerrar sesion
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+           <i class="fa-solid"></i><img src="../imagenes/apagar.png" class="logo">Cerrar sesion
            </button>
            </form>
         </div>

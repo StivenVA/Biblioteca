@@ -10,8 +10,8 @@ h1{
     display: inline-block;
     position: relative;
     color: #240046;
-    font-family: 'Gabriola', cursive;
-    font-size: 30px;
+    font-family: 'Segoe Script', cursive;
+    font-size: 35px;
 }
 h1::after,h1::before{
     content: '';

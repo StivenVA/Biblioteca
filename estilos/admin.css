@@ -1,13 +1,74 @@
 body{
-    background: linear-gradient(to top, #b8b8ff, #f5f3f4);
-    font-family: georgia;
+    background: linear-gradient(to bottom, #b8b8ff, #f5f3f4);
+    
 }
 
-.logoadmin{
-    width: 10%;
-    height: 10%;
+.logo{
+    width: 14%;
+    height: 14%;
+}
+.logopres{
+    width: 20%;
+    height: 20%;
 }
 
-.button{
-    border-radius: 40px;
+.btn{
+    border: none;
+    outline: none;
+    background: linear-gradient(to right, #ffccd5, #ffdccc);
+    cursor: pointer;
+    transition: 0.5s;
+    position: relative;
+    top: 20px;
+    overflow: hidden;
+    margin: 10px;
+    width: 170px;
+    font-size: 20px;
+    font-family: 'Garamond';
+    color: #38040e;
+}
+.btn:hover{
+    color: #3c096c;
+    background: linear-gradient(to right, #b8b8ff, #9381ff);
+}
+button span{
+    position: absolute;
+    background: #240046;
+    transition: .5s;
+}
+button span:nth-child(1){
+    width: 100%;
+    height: 2px;
+    top: 0;
+    left: -100%;
+}
+button span:nth-child(2){
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    right: -100%;
+}
+button span:nth-child(3){
+    width: 2px;
+    height: 100%;
+    bottom: -100%;
+    left: 0;
+}
+button span:nth-child(4){
+    width: 2px;
+    height: 100%;
+    top: -100%;
+    right: 0;
+}
+button:hover span:nth-child(1){
+    left: 0;
+}
+button:hover span:nth-child(2){
+    right: 0;
+}
+button:hover span:nth-child(3){
+    bottom: 0;
+}
+button:hover span:nth-child(4){
+    top: 0;
 }

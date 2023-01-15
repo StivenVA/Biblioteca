@@ -19,7 +19,7 @@
         <div class="wave wave3"></div>
         <div class="wave wave4"></div>
 
-   <h1 class="lines-effect">Biblioteca Virtual</h1>
+   <h1 class="lines-effect">Bienvenidos</h1>
     
 
     <div class="slider">
