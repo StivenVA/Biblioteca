@@ -24,7 +24,7 @@ session_start();
 </div>
         <?php   
           $user=$_SESSION['codigo_user'];
-          $sql="select tipo,nomb_user,numero,telefono,estado,titulo,fecha_pres,fecha_dev,p.cod_usuario,p.cod_ejem from prestamo p,usuarios u,ejemplar e,libros l where u.cod_usuario=p.cod_usuario and e.cod_ejem=p.cod_ejem and l.isbn=e.isbn";
+          $sql="select tipo,nomb_user,numero,telefono,estado,titulo,fecha_pres,fecha_dev,p.cod_usuario,p.cod_ejem from prestamo p,usuarios u,ejemplar e,libros l where u.cod_usuario=p.cod_usuario and e.cod_ejem=p.cod_ejem and l.isbn=e.isbn order by fecha_pres desc";
           $result=pg_query($sql);
           $nom="select nomb_user from usuarios where cod_usuario='$user'";
           $nom=pg_query($nom);
