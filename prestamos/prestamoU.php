@@ -20,12 +20,17 @@ session_start();
 </head>
 
 <body>
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+      
+<section>
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+        <div class="wave wave4"></div>
+   <!--Scripts de ionicons-->
+   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-<div class="container"> 
-    
-</div>
+
         <?php   
           $user=$_SESSION['codigo_user'];
           $sql="select nomb_user,fecha_pres,fecha_dev,titulo from prestamo p, usuarios u,ejemplar e, libros l where l.isbn=e.isbn and e.cod_ejem=p.cod_ejem and u.cod_usuario=p.cod_usuario  and u.cod_usuario='$user'";
@@ -34,42 +39,43 @@ session_start();
           $nom=pg_query($nom);
           $nomb=pg_fetch_object($nom);
         ?>
-        <div class="container">
-           <nav class="navbar navbar-expand-lg bg-body-tertiary">
-          <div class="container-fluid">
-            <form action="prestamoU.php">
-              <button type="submit" class="btn" >
-                <img src="../imagenes/profile.png" class="logo">               
-                <i class="fa-solid"></i> <?php echo $nomb->nomb_user;?>
-              </button>
-            </form>
-      <form action="multas.php">
-        <button type="submit" class="btn">
-          <i class="fa-solid"></i>Multas
-          <img src="../imagenes/dollar.png" class="logo">
-        </button>
-      </form>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <form action="../biblioteca.php">
-           <button type="submit" class="btn">
-            <i class="fa-solid"></i>colección
-            <img src="../imagenes/libro.png" class="logo">
-           </button>
-           </form>
-        </div>
-        
-        <div  id="navbarNav">
-          <form action="../log/logout.php">
-           <button type="submit" class="btn">
-           <i class="fa-solid"></i>Cerra sesion
-           <img src="../imagenes/cerrar-sesion.png" class="logo">
-           </button>
-           </form>
-        </div>
-</div>
-  </nav>
-</div>
+<img src="../imagenes/logounillanos.png" class="logo"><h1 class="lines-effect">Bienvenido</h1>
+      <div class="container">
+      <h1 class="lines-effect"></h1>
+              <div class="nav">
+                <div class="link">
+                  <a href="prestamoU.php">                           
+                    <span><?php echo $nomb->nomb_user;?></span>
+                    <ion-icon name="person-circle-outline"></ion-icon> 
+                  </a>
+                </div>
+
+                <div class="link">
+                  <a href="multas.php">
+                    <span>Multas</span>
+                    <ion-icon name="cash-outline"></ion-icon>
+                  </a>
+                </div>                
+                
+                <div class="link">
+                    <a href="../biblioteca.php">                    
+                        <span>colección</span>
+                        <ion-icon name="bookmarks-outline"></ion-icon>                     
+                    </a>
+                </div>
+
+                <div class="link">
+                  <a href="../log/logout.php">
+                      <span>Cerrar sesion</span>
+                      <ion-icon name="log-out-outline"></ion-icon>                   
+                  </a>
+                </div>
+                
+              </div>
+              
+      </div>
+
     <br>
 
   <div id="table-container" class="container">
@@ -107,7 +113,9 @@ session_start();
     </table>
   </div>
 
-  <div class="container"> 
+         
+  <div class="container">
+  </section> 
     
   </div>
 
@@ -115,6 +123,7 @@ session_start();
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
-<script src="../javascript/table.js"></script>
+    <script src="../javascript/table.js"></script>
+   
 </body>
 </html>

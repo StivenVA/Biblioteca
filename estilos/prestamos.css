@@ -3,9 +3,125 @@
 
 *{
     font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.logo{
+    height: 60px;
+    width: 60px;
+    position: fixed;
+    top: 5px;
+    left: 10px;
+}
+h1{
+    top: 10px;
+    left: 45%;
+    display: inline-block;
+    position: relative;
+    color: #240046;
+    font-family: 'Segoe Script', cursive;
+    font-size: 25px;
+}
+body{
+    background: linear-gradient(to right, #ddd6f3, #dee2ff);
+}
+.nav{
+   
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 470px;
+    height: 60px;
+    background: #fff;
+    border-radius: 50px;
+    overflow: hidden;
 }
 
-.logo{
-    width: 10%;
-    height: 10%;
+.nav .link{
+    transform: translateY(-38px);
+    transition: 0.3s;
+}
+.nav .link a{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    text-decoration: none;
+    color: #f97f79;
+}
+.nav .link a span{
+    font-size: 0.9em;
+    padding: 10px 15px;
+    border-radius: 20px;
+    color: #fff;
+    background: #f97f79;
+}
+.nav .link ion-icon{
+    font-size: 1.5em;
+}
+.nav .link:hover{
+    transform: translateY(13px);
+}
+
+section{
+    position:relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+section .wave{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(../imagenes/wave.png);
+    background-size: 1000px 100px;
+}
+
+section .wave.wave1{
+    animation: animate 30s linear infinite;
+    z-index: 1000;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0;
+}
+section .wave.wave2{
+    animation: animate2 15s linear infinite;
+    z-index: 999;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 10px;
+}
+section .wave.wave3{
+    animation: animate 30s linear infinite;
+    z-index: 998;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 15;
+}
+section .wave.wave4{
+    animation: animate2 5s linear infinite;
+    z-index: 997;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 20px;
+}
+@keyframes animate{
+    0%{
+        background-position-x: 0;
+    }
+    100%{
+        background-position-x: 1000px;
+    }
+}
+@keyframes animate2{
+    0%{
+        background-position-x: 0;
+    }
+    100%{
+        background-position-x: -1000px;
+    }
 }
