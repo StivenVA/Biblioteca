@@ -13,10 +13,15 @@ session_start();
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="../estilos/prestamos.css">
 
     <script src="../fontawesome/js/all.min.js"></script>
     <title>prestamos</title>
 </head>
+
+<body>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 <div class="container"> 
     
@@ -30,31 +35,35 @@ session_start();
           $nomb=pg_fetch_object($nom);
         ?>
         <div class="container">
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-    <form action="prestamoU.php">
-            <button type="submit" class="btn btn-dark" >
-              <i class="fa-solid fa-user"></i> <?php echo $nomb->nomb_user;?>
-            </button>
-      </form>
+           <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+            <form action="prestamoU.php">
+              <button type="submit" class="btn" >
+                <img src="../imagenes/profile.png" class="logo">               
+                <i class="fa-solid"></i> <?php echo $nomb->nomb_user;?>
+              </button>
+            </form>
       <form action="multas.php">
-        <button type="submit" class="btn btn-dark">
-          <i class="fa-solid fa-dollar-sign"></i> Multas
+        <button type="submit" class="btn">
+          <i class="fa-solid"></i>Multas
+          <img src="../imagenes/dollar.png" class="logo">
         </button>
       </form>
 
         <div class="collapse navbar-collapse" id="navbarNav">
           <form action="../biblioteca.php">
-           <button type="submit" class="btn btn-dark">
-            <i class="fa-solid fa-bookmark"></i> Colección
+           <button type="submit" class="btn">
+            <i class="fa-solid"></i>colección
+            <img src="../imagenes/libro.png" class="logo">
            </button>
            </form>
         </div>
         
         <div  id="navbarNav">
           <form action="../log/logout.php">
-           <button type="submit" class="btn btn-dark">
-           <i class="fa-solid fa-power-off"></i> Cerrar sesion
+           <button type="submit" class="btn">
+           <i class="fa-solid"></i>Cerra sesion
+           <img src="../imagenes/cerrar-sesion.png" class="logo">
            </button>
            </form>
         </div>

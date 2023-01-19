@@ -1,0 +1,11 @@
+/* Google Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
+*{
+    font-family: 'Raleway', sans-serif;
+}
+
+.logo{
+    width: 10%;
+    height: 10%;
+}
