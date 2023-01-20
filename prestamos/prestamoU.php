@@ -84,8 +84,8 @@ session_start();
         <tr>
           <th>#</th>
           <th>Título</th>
-          <th>fecha de prestamo</th>
-          <th>fecha de devolución</th> 
+          <th>Fecha de prestamo</th>
+          <th>Fecha de devolución</th> 
         </tr>
       </thead>
       <tbody>
