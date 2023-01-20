@@ -17,7 +17,7 @@ session_start();
     <script src="../fontawesome/js/all.min.js"></script>
     <title>prestamos</title>
 </head>
-
+<body>
 <div class="container"> 
     
 </div>
