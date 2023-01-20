@@ -18,18 +18,18 @@
         <div class="wave wave3"></div>
         <div class="wave wave4"></div>
 
-   <h1 class="lines-effect">Bienvenidos</h1>
+        <img src="imagenes/uni.png" class="logo"><h1 class="lines-effect">Bienvenidos</h1>
     
 
     <div class="slider">
-        <span style="--i:1;"><img src="imagenes/img1.jpg" alt=""></span>
-        <span style="--i:2;"><img src="imagenes/img2.png" alt=""></span>
-        <span style="--i:3;"><img src="imagenes/img3.jpg" alt=""></span>
-        <span style="--i:4;"><img src="imagenes/img4.jpg" alt=""></span>
-        <span style="--i:5;"><img src="imagenes/img5.png" alt=""></span>
-        <span style="--i:6;"><img src="imagenes/img6.jpg" alt=""></span>
-        <span style="--i:7;"><img src="imagenes/img7.png" alt=""></span>
-        <span style="--i:8;"><img src="imagenes/img8.jpg" alt=""></span>
+        <span style="--i:1;"><img src="imagenes/img1.jpg"></span>
+        <span style="--i:2;"><img src="imagenes/1.jpg"></span>
+        <span style="--i:3;"><img src="imagenes/img3.jpg"></span>
+        <span style="--i:4;"><img src="imagenes/biblio.jpg"></span>
+        <span style="--i:5;"><img src="imagenes/img4.jpg"></span>
+        <span style="--i:6;"><img src="imagenes/unillanos.jpeg"></span>
+        <span style="--i:7;"><img src="imagenes/logouni.png"></span>
+        <span style="--i:8;"><img src="imagenes/img8.jpg"></span>
     </div>
     
 
