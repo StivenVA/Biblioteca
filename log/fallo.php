@@ -7,10 +7,19 @@
     <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
     <title>fallo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"/>
-    <link rel="stylesheet" href="../estilos/loader.css">
-    <link rel="stylesheet" href="../estilos/styles.css">
+    
+    <link rel="stylesheet" href="../estilos/fallo.css">
+
 </head>
 <body>
+<section>
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+        <div class="wave wave4"></div>
+
+       <img src="../imagenes/uni.png" class="logo">
+
 
 <div class="contenedor_loader">
         <div class="loader"></div>
@@ -22,9 +31,10 @@
             Usuario y/o contraseña incorrectos!
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
+        
         <div class="container bg-ligth text-dark col-auto p-5 text-center">
         <div class="login">
-                    <img src="../imagenes/login.png" alt="login" class="login-img">
+                    <img src="../imagenes/hombre.png" alt="login" class="login-img">
             </div>
             <form action="loguearse.php" method="POST" class="form-box">
                 <h2 class="form-title">Iniciar sesión</h2>
@@ -38,7 +48,7 @@
         </div>
         </div>  
     </div>
-    
+</section>
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="../javascript/script.js">
  </body>

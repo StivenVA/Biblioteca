@@ -13,10 +13,24 @@ session_start();
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="estilos/prestamos.css">
+    <link rel="stylesheet" href="estilos/tabla.css">
+    <link rel="stylesheet" href="estilos/coleccion.css">
 
     <script src="fontawesome/js/all.min.js"></script>
     <title>biblioteca</title>
 </head>
+
+<body>
+<section>
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+        <div class="wave wave4"></div>
+   <!--Scripts de ionicons-->
+   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 <?php   
           $user=$_SESSION['codigo_user'];
           $nom="select nomb_user from usuarios where cod_usuario='$user'";
@@ -26,31 +40,30 @@ session_start();
           $sala = pg_query($sala);
         ?>
 
-
+<img src="imagenes/logounillanos.png" class="logo"><h1 class="lines-effect">Colección de libros</h1>
 <div class="container">
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-    
-    <form action="prestamos/prestamoU.php">
-            <button type="submit" class="btn btn-dark" >
-              <i class="fa-solid fa-user"></i> <?php echo $nomb->nomb_user;?>
-            </button>
-      </form>
+        <div class="nav">
+                <div class="link">
+                  <a href="prestamos/prestamoU.php">                           
+                    <span><?php echo $nomb->nomb_user;?></span>
+                    <ion-icon name="person-circle-outline"></ion-icon> 
+                  </a>
+                </div>
 
-      <form action="prestamos/multas.php">
-        <button type="submit" class="btn btn-dark">
-        <i class="fa-solid fa-dollar-sign"></i> Multas
-        </button>
-      </form>
+                <div class="link">
+                  <a href="prestamo/multas.php">
+                    <span>Multas</span>
+                    <ion-icon name="cash-outline"></ion-icon>
+                  </a>
+                </div> 
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-        <form action="biblioteca.php">
-           <button type="submit" class="btn btn-dark">
-            <i class="fa-solid fa-bookmark"></i> Colección
-           </button>
-           </form>
-           </form>
-        </div>
+                <div class="link">
+                    <a href="biblioteca.php">                    
+                        <span>colección</span>
+                        <ion-icon name="bookmarks-outline"></ion-icon>                     
+                    </a>
+                </div>
 </div>
   </nav>
 </div>
@@ -80,11 +93,9 @@ session_start();
         </p>
       </div>
         <div class="modal-footer">        
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><ion-icon name="close-circle-outline"></ion-icon>Cancelar</button>
           <button name="codigo_prueba" type="submit" class="btn btn-success" id="recibircodigo">  
-              <i class="fa-solid fa-check"></i>
-              Aceptar
-          </button> 
+          <ion-icon name="checkmark-done-circle-outline"></ion-icon>Aceptar</button> 
         </div>
       </div>
       </form>
@@ -125,7 +136,7 @@ session_start();
           <td><?php echo $mostrar->cant_dis; ?></td>
           <td>
             <button type="button" id="botontabla" data-bs-target="#modal"  data-bs-toggle="modal" data-nombre="<?php echo $mostrar->titulo ?>" data-codigo="<?php echo $mostrar->cod_ejem ?>">
-            <i class="fa-solid fa-book"></i>
+            <img src="imagenes/libro.png" class="soli">
             </button>
           </td>
         </tr>
@@ -146,6 +157,7 @@ session_start();
       </tfoot>
     </table>
   </div>
+          </section>
   
   <script src="javascript/script.js"></script>   
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>

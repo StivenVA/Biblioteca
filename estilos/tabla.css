@@ -1,0 +1,22 @@
+/* tablas*/
+
+#tabla-container{
+    margin: 150px auto;
+    width: 600px;
+}
+table{
+    width: 100%;
+    background-color: #feeafa;
+    text-align: left;
+    border-collapse: collapse;
+}
+th, td{
+    padding: 20px;
+}
+thead, tfoot{
+    background-color: #c8b6ff;
+    border-bottom: solid 5px #9f86c0;
+}
+tr:hover td{
+    background-color: #c8b6ff;
+}

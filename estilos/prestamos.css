@@ -1,5 +1,6 @@
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Source+Serif+Pro:ital,wght@0,300;0,400;1,300&display=swap');
+
 *{
     font-family: 'Source Serif Pro', serif;
     margin: 0;
@@ -22,6 +23,22 @@ h1{
     font-family: 'Segoe Script', cursive;
     font-size: 25px;
 }
+h1::after,h1::before{
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 2px;
+    background-color:currentColor;
+    top: 0.6em;
+    
+}
+h1::before{
+    left: -130px;
+}
+h1::after{
+    right: -130px;
+}
+
 body{
     background: linear-gradient(to right, #ddd6f3, #dee2ff);
 }
@@ -125,25 +142,4 @@ section .wave.wave4{
     }
 }
 
-/* tablas*/
 
-#tabla-container{
-    margin: 150px auto;
-    width: 600px;
-}
-table{
-    width: 100%;
-    background-color: #feeafa;
-    text-align: left;
-    border-collapse: collapse;
-}
-th, td{
-    padding: 20px;
-}
-thead, tfoot{
-    background-color: #c8b6ff;
-    border-bottom: solid 5px #9f86c0;
-}
-tr:hover td{
-    background-color: #c8b6ff;
-}

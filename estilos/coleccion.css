@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Source+Serif+Pro:ital,wght@0,300;0,400;1,300&display=swap');
+
+.soli{
+    width: 40px;
+    height: 40px;
+}
+
+button{
+    border: none;
+    border-radius: 50px;
+}
+
+#recibirnombre{
+    background: none;
+    border: none;
+    color: #9a031e;
+}
+
+.btn{
+    border: none;
+    outline: none;
+    background: linear-gradient(to right, #ffccd5, #ffdccc);
+    cursor: pointer;
+    transition: 0.5s;
+    overflow: hidden;
+    margin: 10px;
+    width: 120px;
+    font-size: 18px;
+    font-family: 'Source Serif Pro', serif;
+    color: #38040e;
+}
+.btn:hover{
+    color: #3c096c;
+    background: linear-gradient(to right, #b8b8ff, #9381ff);
+}
+
+.modal-content{
+    background: #dee2ff;
+}

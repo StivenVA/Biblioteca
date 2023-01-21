@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+.login-img{
+    height: 70px;
+    width: 70px;
+}
+.logo{
+    height: 90px;
+    width: 18   0px;
+    position: fixed;
+    top: 5px;
+    left: 5px;
+}
+
+.col-auto{
+    position: relative;
+    bottom: 8%;
+}
+
+section{
+    position:relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(to top, #b8b8ff, #f5f3f4);
+}
+section .wave{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(../imagenes/wave.png);
+    background-size: 1000px 100px;
+}
+
+section .wave.wave1{
+    animation: animate 30s linear infinite;
+    z-index: 1000;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0;
+}
+section .wave.wave2{
+    animation: animate2 15s linear infinite;
+    z-index: 999;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 10px;
+}
+section .wave.wave3{
+    animation: animate 30s linear infinite;
+    z-index: 998;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 15;
+}
+section .wave.wave4{
+    animation: animate2 5s linear infinite;
+    z-index: 997;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 20px;
+}
+@keyframes animate{
+    0%{
+        background-position-x: 0;
+    }
+    100%{
+        background-position-x: 1000px;
+    }
+}
+@keyframes animate2{
+    0%{
+        background-position-x: 0;
+    }
+    100%{
+        background-position-x: -1000px;
+    }
+}
+
+.form-title{
+    color:#022b3a;  
+    font-size: 35px;
+    font-family: Gabriola;
+}
+.container{
+
+    bottom: 22%;
+    border-radius: 60px;
+    background:#b8b8ff;
+}
+
+.form-box input[type="text"],
+.form-box input[type="password"],
+.form-box button[type="submit"]{
+    border:0px;
+    background:none;
+    padding:10px 5px;
+    text-align: center;
+    border:2px solid #022b3a; 
+    width: 190px;
+    outline: none;
+    color:#10002b;
+    border-radius: 25px;
+    transition: 0.25s;
+}
+
+.form-box input[type="text"]:focus,
+.form-box input[type="password"]:focus{
+    width: 250px;
+    border-color:#240046;
+}
+
+.form-box button[type="submit"]{
+    font-family: Garamond;
+    font-size: 20px;
+    border: 0px;
+    background: #3d348b;
+    color:#e7c6ff;
+    cursor: pointer;
+}
+
+.form-box button[type="submit"]:hover{
+    background:#240046;
+}

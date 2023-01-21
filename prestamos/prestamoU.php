@@ -14,6 +14,7 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="../estilos/prestamos.css">
+    <link rel="stylesheet" href="../estilos/tabla.css">
 
     <script src="../fontawesome/js/all.min.js"></script>
     <title>prestamos</title>
@@ -42,7 +43,6 @@ session_start();
 
 <img src="../imagenes/logounillanos.png" class="logo"><h1 class="lines-effect">Bienvenido</h1>
       <div class="container">
-      <h1 class="lines-effect"></h1>
               <div class="nav">
                 <div class="link">
                   <a href="prestamoU.php">                           

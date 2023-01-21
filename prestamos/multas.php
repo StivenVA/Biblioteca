@@ -13,14 +13,24 @@ session_start();
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="../estilos/prestamos.css">
+    <link rel="stylesheet" href="../estilos/tabla.css">
 
     <script src="../fontawesome/js/all.min.js"></script>
     <title>Multas</title>
 </head>
 
-<div class="container"> 
-    
-</div>
+<body>
+
+  <section>
+    <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+        <div class="wave wave4"></div>
+   <!--Scripts de ionicons-->
+   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
         <?php   
           $user=$_SESSION['codigo_user'];
           $sql="select titulo,motivo,deuda,estado,fecha_mul from multa m,usuarios u,ejemplar e,libros l where u.cod_usuario=m.cod_usuario and e.cod_ejem=m.cod_ejem and l.isbn=e.isbn and u.cod_usuario='$user'";
@@ -29,27 +39,31 @@ session_start();
           $nom=pg_query($nom);
           $nomb=pg_fetch_object($nom);
         ?>
-        <div class="container">
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-    <form action="prestamoU.php">
-            <button type="submit" class="btn btn-dark" >
-              <i class="fa-solid fa-user"></i> <?php echo $nomb->nomb_user;?>
-            </button>
-      </form>
-      <form action="multas.php">
-        <button type="submit" class="btn btn-dark">
-          <i class="fa-solid fa-dollar-sign"></i> Multas
-        </button>
-      </form>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <form action="../biblioteca.php">
-           <button type="submit" class="btn btn-dark">
-            <i class="fa-solid fa-bookmark"></i> Colección
-           </button>
-           </form>
-        </div>
+  <img src="../imagenes/logounillanos.png" class="logo"><h1 class="lines-effect">Multas</h1>
+        <div class="container">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="nav">
+                <div class="link">
+                  <a href="prestamoU.php">                           
+                    <span><?php echo $nomb->nomb_user;?></span>
+                    <ion-icon name="person-circle-outline"></ion-icon> 
+                  </a>
+                </div>
+
+                <div class="link">
+                  <a href="multas.php">
+                    <span>Multas</span>
+                    <ion-icon name="cash-outline"></ion-icon>
+                  </a>
+                </div>
+
+                <div class="link">
+                    <a href="../biblioteca.php">                    
+                        <span>colección</span>
+                        <ion-icon name="bookmarks-outline"></ion-icon>                     
+                    </a>
+                </div>
 </div>
   </nav>
 </div>
@@ -97,6 +111,7 @@ session_start();
   </div>
 
   <div class="container"> 
+          </section> 
     
   </div>
 
