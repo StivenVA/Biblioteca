@@ -8,7 +8,7 @@
 }
 
 body{
-    background: linear-gradient(to right, #ddd6f3, #dee2ff);
+    background: linear-gradient(to left, #b8b8ff, #f5f3f4);  
 }
 
 .logouni{
@@ -88,3 +88,24 @@ h1::after{
 .nav .link:hover{
     transform: translateY(13px);
 }
+
+h2{
+    text-align: center;
+    font-family: 'Merienda', cursive;
+    font-size: 30px;
+    background: linear-gradient(#1497be, #1c2aec);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    animation: text 5s linear infinite;
+}
+@keyframes text{
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+

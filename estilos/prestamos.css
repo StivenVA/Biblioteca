@@ -40,7 +40,7 @@ h1::after{
 }
 
 body{
-    background: linear-gradient(to right, #ddd6f3, #dee2ff);
+    background: linear-gradient(to left, #b8b8ff, #f5f3f4);
 }
 .nav{
    

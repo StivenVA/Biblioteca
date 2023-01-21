@@ -13,15 +13,20 @@ session_start();
     <link rel="stylesheet" href="../estilos/admin.css">
     <link rel="stylesheet" href="../estilos/botones.css">
     <link rel="stylesheet" href="../fontawesome/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&family=Raleway:wght@500&family=Source+Serif+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
     
     <title>Admin</title>
 </head>
 <body>
 
+
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-<img src="../imagenes/logounillanos.png" class="logouni"><h1 class="lines-effect">Bienvenido</h1>
+<img src="../imagenes/logounillanos.png" class="logouni"><h2 class="lines-effect">Estadísticas</h2>
         <?php   
           $user=$_SESSION['codigo_user'];
           $sql="select count(pr.cod_usuario),nomb_user as prestamo from prestamo pr,usuarios u where u.cod_usuario=pr.cod_usuario GROUP BY u.nomb_user";
@@ -68,6 +73,9 @@ session_start();
 </div>
   </nav>
 </div>
+
+
+
   <div class="container" width="100" height="100">
   
   <p><br> Persona que ha solicitado más préstamos en los últimos 7 días: 
@@ -79,6 +87,7 @@ session_start();
 
         echo $query->nomb_user;
       ?>
+
     
 
   <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" id="collapse">
@@ -201,9 +210,11 @@ Ver gráfico <i class="fa-solid fa-chevron-down"></i>
            } ?>";
         j++;
       <?php } ?>
+  
+    </script> 
     
+
     
-    </script>  
     <script src="../javascript/Graphs.js"></script>
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
 </body>

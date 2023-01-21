@@ -25,8 +25,13 @@ session_start();
 
 <body>
 
+  
+
+
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
 
 <img src="../imagenes/logounillanos.png" class="logouni"><h1 class="lines-effect">Prestamos</h1>
         <?php   
@@ -65,7 +70,7 @@ session_start();
               <div class="link"> 
                   <a href="Mulview.php">
                     <span>Ver todas las multas</span>
-                    <img src="../imagenes/dollar.png" class="multas"> 
+                    <i class="fa-solid fa-dollar-sign"></i>
                   </a>  
               </div>
 
@@ -135,7 +140,7 @@ session_start();
     </table>
   </div>
 
-  
+    
             <!--Este es el modal para la verificafcion de la devolucion-->
 
 <div class="modal" tabindex="-1" id="modal">
@@ -163,7 +168,9 @@ session_start();
           </form>
     </div>
   </div>
+
 </div>
+   
     
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -171,5 +178,6 @@ session_start();
     <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
     <script src="../javascript/mul.js"></script>
     <script src="../javascript/Mulescript.js"></script>
+  
 </body>
 </html>
