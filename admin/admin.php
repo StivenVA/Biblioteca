@@ -11,11 +11,17 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../estilos/admin.css">
+    <link rel="stylesheet" href="../estilos/botones.css">
     <link rel="stylesheet" href="../fontawesome/css/all.min.css">
     
     <title>Admin</title>
 </head>
+<body>
 
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<img src="../imagenes/logounillanos.png" class="logouni"><h1 class="lines-effect">Bienvenido</h1>
         <?php   
           $user=$_SESSION['codigo_user'];
           $sql="select count(pr.cod_usuario),nomb_user as prestamo from prestamo pr,usuarios u where u.cod_usuario=pr.cod_usuario GROUP BY u.nomb_user";
@@ -25,55 +31,40 @@ session_start();
           $nomb=pg_fetch_object($nom);
         ?>
 
-<div class="container">  
-</div>
-    
+
+
+
   <div class="container">
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <form action="admin.php">
-            <button type="submit" class="btn" >
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <img src="../imagenes/admin.png" class="logo"> 
-               <?php echo $nomb->nomb_user;?>
-            </button>
-      </form>
-      <form action="Multas.php">
-        <button type="submit" class="btn btn-dark">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-        <img src="../imagenes/prestado.png" class="logopres"> Prestamos
-        </button>
-      </form>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <form action="coleccion.php">
-           <button type="submit" class="btn btn-dark">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            <img src="../imagenes/libros.png" class="logo">Colección
-           </button>
-           </form>
-        </div>
-
-        <div  id="navbarNav">
-          <form action="../log/logout.php">
-           <button type="submit" class="btn btn-dark">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-           <img src="../imagenes/apagar.png" class="logo"> Cerrar sesion
-           </button>
-           </form>
-        </div>
+            <div class="nav">
+                <div class="link">
+                  <a href="admin.php">                           
+                    <span><?php echo $nomb->nomb_user;?></span>
+                    <ion-icon name="person-circle-outline"></ion-icon> 
+                  </a>
+                </div>
+    
+                <div class="link">
+                  <a href="Multas.php">
+                    <span>Multas</span>
+                    <ion-icon name="cash-outline"></ion-icon>
+                  </a>
+                </div>  
+        
+                <div class="link">
+                  <a href="coleccion.php">
+                    <span>Colección</span>
+                    <ion-icon name="bookmarks-outline"></ion-icon>  
+                  </a>
+                </div>  
+       
+                <div class="link">
+                  <a href="../log/logout.php">
+                    <span> Cerrar sesion</span>
+                    <ion-icon name="log-out-outline"></ion-icon>    
+                  </a>
+                </div>  
+       
 </div>
   </nav>
 </div>
@@ -88,10 +79,16 @@ session_start();
 
         echo $query->nomb_user;
       ?>
-    </p>
+    
+
   <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" id="collapse">
-    Ver gráfico <i class="fa-solid fa-chevron-down"></i>
+   <span></span> 
+   <span></span> 
+   <span></span> 
+   <span></span> 
+  Ver gráfico <i class="fa-solid fa-chevron-down"></i>
   </button>
+  </p>
   </div>
 
 <div class="collapse" id="collapseExample" >  
@@ -113,6 +110,10 @@ session_start();
       ?>
       
     <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#categorias " aria-expanded="false" aria-controls="collapseExample" id="collapse">
+    <span></span> 
+   <span></span> 
+   <span></span> 
+   <span></span>
     Ver gráfico <i class="fa-solid fa-chevron-down"></i>
     </button>
     </p>
@@ -123,9 +124,14 @@ session_start();
   <canvas id="cats" ></canvas>
   </div>
 </div>
-
+<div class="container" width="100" height="100">
+<p><br> Solicitudes de prestamos por sala:
 <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#percentage " aria-expanded="false" aria-controls="collapseExample" id="collapse">
-    Ver gráfico <i class="fa-solid fa-chevron-down"></i>
+<span></span> 
+   <span></span> 
+   <span></span> 
+   <span></span>    
+Ver gráfico <i class="fa-solid fa-chevron-down"></i>
     </button>
     </p>
     </div>

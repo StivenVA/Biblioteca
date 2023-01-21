@@ -13,15 +13,18 @@ session_start();
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="../estilos/admin.css">
+    <link rel="stylesheet" href="../estilos/tabla.css">
+    <link rel="stylesheet" href="../estilos/Multas.css">
 
     <script src="../fontawesome/js/all.min.js"></script>
     
     <title>Multas</title>
 </head>
 
-<div class="container"> 
-    
-</div>
+<body>
+
+<img src="../imagenes/logounillanos.png" class="logouni">
         <?php   
           $user=$_SESSION['codigo_user'];
           $sql="select tipo,nomb_user,numero,telefono,estado,titulo,fecha_pres,fecha_dev,p.cod_usuario,p.cod_ejem from prestamo p,usuarios u,ejemplar e,libros l where u.cod_usuario=p.cod_usuario and e.cod_ejem=p.cod_ejem and l.isbn=e.isbn order by fecha_pres desc";
@@ -96,7 +99,7 @@ session_start();
             } ?></td>
           <td><?php echo $mostrar->estado; ?></td>
           <td><button type="button" id="botontabla" class="btn btn-outline-success" data-bs-target="#modal"  data-bs-toggle="modal" data-titulo="<?php echo $mostrar->titulo; ?>" data-cod="<?php echo $mostrar->cod_ejem; ?>" data-user="<?php echo $mostrar->cod_usuario; ?>" data-fecha="<?php echo $mostrar->fecha_pres; ?>" >
-          <i class="fa-solid fa-clipboard-check"></i>
+          <img src="../imagenes/aprobar.png" class="check">
             </button></td>
         </tr>
       <?php } ?>
