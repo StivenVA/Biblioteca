@@ -1,0 +1,21 @@
+.x{
+    width: 30px;
+    height: 30px;
+}
+#Delete, #Edit{
+    background: none;
+    border-radius: 50px;
+    border: none;
+}
+#Delete:hover{
+    background: #f5cac3;
+}
+#Edit:hover{
+    background: #f5cac3;
+}
+
+.modal .modal-content{
+    background: #dee2ff;
+    font-size: 20px;
+}
+
