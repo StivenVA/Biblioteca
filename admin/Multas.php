@@ -61,17 +61,18 @@ session_start();
                     <ion-icon name="library-outline"></ion-icon>
                   </a>
                 </div> 
+
+              <div class="link"> 
+                  <a href="Mulview.php">
+                    <span>Ver todas las multas</span>
+                    <img src="../imagenes/dollar.png" class="multas"> 
+                  </a>  
+              </div>
+
 </div>
   </nav>
 </div>
 
-<div class="container"> 
-    <form action="Mulview.php">
-       <button type="submit" id="botontabla" class="boton">
-       <img src="../imagenes/dollar.png" class="multas"> Ver todas las multas
-        </button>
-     </form>
-  </div>
 
     <br>
 
