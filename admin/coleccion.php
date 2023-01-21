@@ -13,10 +13,20 @@ session_start();
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="../estilos/admin.css">
+    <link rel="stylesheet" href="../estilos/tabla.css">
+    <link rel="stylesheet" href="../estilos/colecciones.css">
 
     <script src="../fontawesome/js/all.min.js"></script>
     <title>Colección</title>
 </head>
+
+<body>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<img src="../imagenes/logounillanos.png" class="logouni"><h1 class="lines-effect">Colección de libros</h1>
 
 <?php   
           $user=$_SESSION['codigo_user'];
@@ -30,25 +40,27 @@ session_start();
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
 
-    <form action="admin.php">
-            <button type="submit" class="btn btn-dark" >
-              <i class="fa-solid fa-user"></i> <?php echo $nomb->nomb_user;?>
-            </button>
-      </form>
+    <div class="nav">
+                <div class="link">
+                  <a href="admin.php">                           
+                    <span><?php echo $nomb->nomb_user;?></span>
+                    <ion-icon name="person-circle-outline"></ion-icon> 
+                  </a>
+                </div>
 
-      <form action="Multas.php">
-        <button type="submit" class="btn btn-dark">
-        <i class="fa-solid fa-hands"></i> prestamos
-        </button>
-      </form>
+                <div class="link">
+                  <a href="Multas.php">
+                    <span>Prestamos</span>
+                    <ion-icon name="document-text-outline"></ion-icon>
+                  </a>
+                </div>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <form action="coleccion.php">
-           <button type="submit" class="btn btn-dark">
-            <i class="fa-solid fa-bookmark"></i> Colección
-           </button>
-           </form>
-        </div>
+                <div class="link">
+                  <a href="coleccion.php">
+                    <span>Colección</span>
+                    <ion-icon name="library-outline"></ion-icon>
+                  </a>
+                </div> 
 </div>
   </nav>
 </div>
@@ -67,9 +79,9 @@ session_start();
         ¿Desea eliminar PERMANENTEMENTE <input id="recibirnombre" type="text" name ="nombre_prueba" disabled class="text-center">?
       </div>
         <div class="modal-footer">        
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <button name="codigo_prueba" type="submit" class="btn btn-success" id="recibircodigo">  
-              <i class="fa-solid fa-check"></i>
+          <button type="button" class="butn btn-secondary" data-bs-dismiss="modal"><ion-icon name="close-circle-outline"></ion-icon>Cancelar</button>
+          <button name="codigo_prueba" type="submit" class="butn btn-success" id="recibircodigo">  
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
               Aceptar
           </button> 
         </div>
@@ -110,7 +122,7 @@ session_start();
           <td><?php echo $mostrar->cant_dis; ?></td>
           <td>
             <button type="button" id="botontabla" class="btn btn-outline-danger" data-bs-target="#modal"  data-bs-toggle="modal" data-nombre="<?php echo $mostrar->titulo ?>" data-codigo="<?php echo $mostrar->isbn ?>">
-            <i class="fa-solid fa-delete-left"></i>
+            <img src="../imagenes/basura.png" class="basura">
             </button>
           </td>
         </tr>

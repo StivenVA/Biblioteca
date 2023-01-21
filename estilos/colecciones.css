@@ -1,46 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Source+Serif+Pro:ital,wght@0,300;0,400;1,300&display=swap');
-
-.soli{
-    width: 40px;
-    height: 40px;
+.basura{
+    width: 35px;
+    height: 35px;
 }
-
-button{
+#botontabla{
     border: none;
     border-radius: 50px;
 }
 
+.modal-content{
+    background: #dee2ff;
+}
 #recibirnombre{
     background: none;
     border: none;
     color: #9a031e;
+    font-size: 20px;
 }
 
-.btn{
-    border: none;
+.butn{
     outline: none;
     background: linear-gradient(to right, #ffccd5, #ffdccc);
     cursor: pointer;
+    border-radius: 20px;
+    border-color: #9e2a2b;
     margin: 10px;
     width: 120px;
     font-size: 18px;
     font-family: 'Source Serif Pro', serif;
     color: #38040e;
 }
-.btn:hover{
+.butn:hover{
     color: #3c096c;
     background: linear-gradient(to right, #b8b8ff, #9381ff);
-}
-
-.modal-content{
-    background: #dee2ff;
-}
-
-#titulo{
-    position: absolute;
-    left: 25%;
-    top: 20%;
-    background: none;
-    border: none;
-    color: #9a031e;
 }
