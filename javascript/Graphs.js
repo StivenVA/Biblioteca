@@ -15,7 +15,8 @@ const ctx = document.getElementById('myChart').getContext("2d");
     options: {
       responsive:true,
       maintainAspectRatio:false,
-    }
+    },
+   
   });
 
   const graph = document.getElementById('cats').getContext("2d");
