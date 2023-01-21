@@ -1,6 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Source+Serif+Pro:ital,wght@0,300;0,400;1,300&display=swap');
+
+*{
+    font-family: 'Source Serif Pro', serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
-    background: linear-gradient(to bottom, #b8b8ff, #f5f3f4);
+    background: linear-gradient(to right, #ddd6f3, #dee2ff);
+}
+
+.logouni{
+    height: 60px;
+    width: 60px;
+    position: fixed;
+    top: 5px;
+    left: 10px;
+}
+h1{
+    top: 10px;
+    left: 45%;
+    display: inline-block;
+    position: relative;
+    color: #240046;
+    font-family: 'Segoe Script', cursive;
+    font-size: 25px;
+}
+h1::after,h1::before{
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 2px;
+    background-color:currentColor;
+    top: 0.6em;
     
+}
+h1::before{
+    left: -130px;
+}
+h1::after{
+    right: -130px;
 }
 
 .logo{
@@ -12,63 +52,39 @@ body{
     height: 20%;
 }
 
-.btn{
-    border: none;
-    outline: none;
-    background: linear-gradient(to right, #ffccd5, #ffdccc);
-    cursor: pointer;
-    transition: 0.5s;
-    position: relative;
-    top: 20px;
+.nav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 470px;
+    height: 60px;
+    background: #fff;
+    border-radius: 50px;
     overflow: hidden;
-    margin: 10px;
-    width: 170px;
-    font-size: 20px;
-    font-family: 'Garamond';
-    color: #38040e;
 }
-.btn:hover{
-    color: #3c096c;
-    background: linear-gradient(to right, #b8b8ff, #9381ff);
+.nav .link{
+    transform: translateY(-38px);
+    transition: 0.3s;
 }
-button span{
-    position: absolute;
-    background: #240046;
-    transition: .5s;
+.nav .link a{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    text-decoration: none;
+    color: #f97f79;
 }
-button span:nth-child(1){
-    width: 100%;
-    height: 2px;
-    top: 0;
-    left: -100%;
+.nav .link a span{
+    font-size: 0.9em;
+    padding: 10px 15px;
+    border-radius: 20px;
+    color: #fff;
+    background: #f97f79;
 }
-button span:nth-child(2){
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    right: -100%;
+.nav .link ion-icon{
+    font-size: 1.5em;
 }
-button span:nth-child(3){
-    width: 2px;
-    height: 100%;
-    bottom: -100%;
-    left: 0;
-}
-button span:nth-child(4){
-    width: 2px;
-    height: 100%;
-    top: -100%;
-    right: 0;
-}
-button:hover span:nth-child(1){
-    left: 0;
-}
-button:hover span:nth-child(2){
-    right: 0;
-}
-button:hover span:nth-child(3){
-    bottom: 0;
-}
-button:hover span:nth-child(4){
-    top: 0;
+.nav .link:hover{
+    transform: translateY(13px);
 }
