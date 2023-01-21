@@ -46,15 +46,15 @@ session_start();
     
                 <div class="link">
                   <a href="Multas.php">
-                    <span>Multas</span>
-                    <ion-icon name="cash-outline"></ion-icon>
+                    <span>Prestamos</span>
+                    <ion-icon name="document-text-outline"></ion-icon>
                   </a>
                 </div>  
         
                 <div class="link">
                   <a href="coleccion.php">
                     <span>Colección</span>
-                    <ion-icon name="bookmarks-outline"></ion-icon>  
+                    <ion-icon name="library-outline"></ion-icon>
                   </a>
                 </div>  
        

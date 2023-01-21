@@ -95,7 +95,7 @@ session_start();
         <div class="modal-footer">        
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><ion-icon name="close-circle-outline"></ion-icon>Cancelar</button>
           <button name="codigo_prueba" type="submit" class="btn btn-success" id="recibircodigo">  
-          <ion-icon name="checkmark-done-circle-outline"></ion-icon>Aceptar</button> 
+          <ion-icon name="checkmark-circle-outline"></ion-icon>Aceptar</button> 
         </div>
       </div>
       </form>

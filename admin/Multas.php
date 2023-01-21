@@ -16,6 +16,7 @@ session_start();
     <link rel="stylesheet" href="../estilos/admin.css">
     <link rel="stylesheet" href="../estilos/tabla.css">
     <link rel="stylesheet" href="../estilos/Multas.css">
+    <link rel="stylesheet" href="../estilos/coleccion.css">
 
     <script src="../fontawesome/js/all.min.js"></script>
     
@@ -24,7 +25,10 @@ session_start();
 
 <body>
 
-<img src="../imagenes/logounillanos.png" class="logouni">
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<img src="../imagenes/logounillanos.png" class="logouni"><h1 class="lines-effect">Prestamos</h1>
         <?php   
           $user=$_SESSION['codigo_user'];
           $sql="select tipo,nomb_user,numero,telefono,estado,titulo,fecha_pres,fecha_dev,p.cod_usuario,p.cod_ejem from prestamo p,usuarios u,ejemplar e,libros l where u.cod_usuario=p.cod_usuario and e.cod_ejem=p.cod_ejem and l.isbn=e.isbn order by fecha_pres desc";
@@ -36,30 +40,39 @@ session_start();
         <div class="container">
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-    
-    <form action="admin.php">
-            <button type="submit" class="btn btn-dark" >
-              <i class="fa-solid fa-user"></i> <?php echo $nomb->nomb_user;?>
-            </button>
-      </form>
+    <div class="nav">
+                <div class="link">
+                  <a href="admin.php">                           
+                    <span><?php echo $nomb->nomb_user;?></span>
+                    <ion-icon name="person-circle-outline"></ion-icon> 
+                  </a>
+                </div>
 
-      <form action="Multas.php">
-        <button type="submit" class="btn btn-dark">
-        <i class="fa-solid fa-hands"></i> Prestamos
-        </button>
-      </form>
+                <div class="link">
+                  <a href="Multas.php">
+                    <span>Prestamos</span>
+                    <ion-icon name="document-text-outline"></ion-icon>
+                  </a>
+                </div> 
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-        <form action="coleccion.php">
-           <button type="submit" class="btn btn-dark">
-            <i class="fa-solid fa-bookmark"></i> Colección
-           </button>
-           </form>
-           </form>
-        </div>
+                <div class="link">
+                  <a href="coleccion.php">
+                    <span>Colección</span>
+                    <ion-icon name="library-outline"></ion-icon>
+                  </a>
+                </div> 
 </div>
   </nav>
 </div>
+
+<div class="container"> 
+    <form action="Mulview.php">
+       <button type="submit" id="botontabla" class="boton">
+       <img src="../imagenes/dollar.png" class="multas"> Ver todas las multas
+        </button>
+     </form>
+  </div>
+
     <br>
 
   <div id="table-container" class="container">
@@ -121,13 +134,7 @@ session_start();
     </table>
   </div>
 
-  <div class="container"> 
-    <form action="Mulview.php">
-  <button type="submit" id="botontabla" class="btn btn-outline-success">
-          <i class="fa-solid fa-wallet"></i> Ver todas las multas
-            </button>
-          </form>
-  </div>
+  
             <!--Este es el modal para la verificafcion de la devolucion-->
 
 <div class="modal" tabindex="-1" id="modal">

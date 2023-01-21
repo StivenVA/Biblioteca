@@ -37,3 +37,12 @@ button{
 .modal-content{
     background: #dee2ff;
 }
+
+#titulo{
+    position: absolute;
+    left: 25%;
+    top: 20%;
+    background: none;
+    border: none;
+    color: #9a031e;
+}

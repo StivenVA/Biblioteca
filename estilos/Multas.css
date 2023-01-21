@@ -8,3 +8,18 @@
     background: none;
     border-radius: 50px;
 }
+
+.multas{
+    width: 25px;
+    height: 25px;
+}
+.boton{
+    position: absolute;
+    right: 50px;
+    top: 40px;
+    font-size: 20px;
+}
+
+.boton:hover{
+    color: #5a189a;
+}
