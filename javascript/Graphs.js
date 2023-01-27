@@ -9,7 +9,8 @@ const ctx = document.getElementById('myChart').getContext("2d");
         data: cant,
         borderWidth: 1,
         cutout:'85%',
-        borderRadius:'20'
+        borderRadius:'20', 
+
       }]
     },
     options: {

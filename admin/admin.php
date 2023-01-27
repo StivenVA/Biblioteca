@@ -12,11 +12,14 @@ session_start();
     <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../estilos/admin.css">
     <link rel="stylesheet" href="../estilos/botones.css">
+    <link rel="stylesheet" href="../estilos/graficas.css">
     <link rel="stylesheet" href="../fontawesome/css/all.min.css">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.0/chart.min.js" integrity="sha512-qKyIokLnyh6oSnWsc5h21uwMAQtljqMZZT17CIMXuCQNIfFSFF4tJdMOaJHL9fQdJUANid6OB6DRR0zdHrbWAw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&family=Raleway:wght@500&family=Source+Serif+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&family=Raleway:wght@500&family=Source+Serif+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
     
     <title>Admin</title>
 </head>
@@ -128,6 +131,8 @@ session_start();
     </p>
     </div>
 
+   
+
 <div class="collapse" id="categorias" >
   <div class="card card-body" >
   <canvas id="cats" ></canvas>
@@ -217,7 +222,8 @@ Ver gráfico <i class="fa-solid fa-chevron-down"></i>
     
     <script src="../javascript/Graphs.js"></script>
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
-</body>
+    
+  </body>
     
     
 

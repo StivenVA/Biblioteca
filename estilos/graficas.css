@@ -1,0 +1,23 @@
+#collapseExample{
+    width: 50%;
+    height: 50%;
+    position: relative;
+    left: 25%;
+}
+#categorias{
+    width: 50%;
+    height: 50%;
+    position: relative;
+    left: 25%;
+}
+#percentage{
+    width: 50%;
+    height: 50%;
+    position: relative;
+    left: 25%;
+}
+.card{
+    background: linear-gradient(to right, #b8b8ff, #f5f3f4);  
+    border: none;
+}
+
