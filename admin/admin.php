@@ -13,6 +13,7 @@ session_start();
     <link rel="stylesheet" href="../estilos/admin.css">
     <link rel="stylesheet" href="../estilos/botones.css">
     <link rel="stylesheet" href="../estilos/graficas.css">
+    <link rel="stylesheet" href="../estilos/footer.css">
     <link rel="stylesheet" href="../fontawesome/css/all.min.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.0/chart.min.js" integrity="sha512-qKyIokLnyh6oSnWsc5h21uwMAQtljqMZZT17CIMXuCQNIfFSFF4tJdMOaJHL9fQdJUANid6OB6DRR0zdHrbWAw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -24,7 +25,6 @@ session_start();
     <title>Admin</title>
 </head>
 <body>
-
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -156,10 +156,13 @@ Ver gráfico <i class="fa-solid fa-chevron-down"></i>
   </div>
 </div>
 
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script> 
+
       /*Este es el js para los datos de los prestamos en los últimos 30 días*/
-    <?php 
+  
+   <?php 
         $query = "select prestamo,nomb_user from (select count(pr.cod_usuario) as prestamo,nomb_user  from prestamo pr,usuarios u where u.cod_usuario=pr.cod_usuario and fecha_pres>=current_date-7 and fecha_pres<=current_date GROUP BY u.nomb_user) d GROUP BY nomb_user,prestamo";
         $query = pg_query($query);
     ?>
@@ -219,12 +222,19 @@ Ver gráfico <i class="fa-solid fa-chevron-down"></i>
     </script> 
     
 
-    
+   
     <script src="../javascript/Graphs.js"></script>
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
     
+    <footer>
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+    </div>
+    </footer>
   </body>
-    
-    
+ 
 
 </html>
