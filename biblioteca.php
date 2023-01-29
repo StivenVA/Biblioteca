@@ -109,7 +109,6 @@ session_start();
           <th>Publicacion</th>
           <th>Editorial</th>
           <th>Categoria</th>
-          <th>Seccion</th>
           <th>Disponibles</th>
           <th>Solicitar</th>
         </tr>
@@ -128,7 +127,6 @@ session_start();
           <td><?php echo $mostrar->fecha_pub; ?></td>
           <td><?php echo $mostrar->nomb_edi; ?></td>
           <td><?php echo $mostrar->categoria; ?></td>
-          <td><?php echo $mostrar->localizacion; ?></td>
           <td><?php echo $mostrar->cant_dis; ?></td>
           <td>
             <button type="button" id="botontabla" data-bs-target="#modal"  data-bs-toggle="modal" data-nombre="<?php echo $mostrar->titulo ?>" data-codigo="<?php echo $mostrar->cod_ejem ?>">
@@ -146,7 +144,6 @@ session_start();
           <th>Publicacion</th>
           <th>Editorial</th>
           <th>Categoria</th>
-          <th>Seccion</th>
           <th>Disponibles</th>
           <th>Solicitar</th>
         </tr>

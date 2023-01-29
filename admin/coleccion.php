@@ -142,6 +142,12 @@ session_start();
       </tfoot>
     </table>
   </div>
+
+  <div>
+    <form action="addbooks.php">
+      <button type="submit" class="btn btn-outline-danger"> Agregar un libro </button>
+    </form> 
+  </div>
   
   <script src="../javascript/script.js"></script>   
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>

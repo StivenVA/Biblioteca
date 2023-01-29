@@ -26,7 +26,7 @@ session_start();
 </head>
 <body>
 
-  <div class="burbujas">
+    <div class="burbujas">
     <div class="burbuja"></div>
     <div class="burbuja"></div>
     <div class="burbuja"></div>
@@ -37,6 +37,7 @@ session_start();
     <div class="burbuja"></div>
     <div class="burbuja"></div>
     <div class="burbuja"></div>
+    
  
 
 
@@ -210,12 +211,12 @@ Ver gráfico <i class="fa-solid fa-chevron-down"></i>
     <script>
       //Este es el js de los datos  para el tipo de usuario que más suele solictar libros
       <?php 
-      $query = "select count(numero) as cantidad from prestamo where fecha_pres>=CURRENT_DATE-7 and fecha_pres<=CURRENT_DATE";
+      $query = "select count(numero) as cantidad from prestamo";
       $query = pg_query($query);
       $query = pg_fetch_object($query);
       $total =$query->cantidad;
 
-      $query = "select count(numero) as cantidad,numero from prestamo where fecha_pres>=CURRENT_DATE-7 and fecha_pres<=CURRENT_DATE group by numero";
+      $query = "select count(numero) as cantidad,numero from prestamo  group by numero";
       $query = pg_query($query);
       ?>
 
