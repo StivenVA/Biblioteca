@@ -9,6 +9,8 @@
 
 body{
     background: linear-gradient(to left, #b8b8ff, #f5f3f4);  
+    display: flex;
+    min-height: 100vh;
 }
 
 .logouni{
@@ -92,24 +94,11 @@ h1::after{
 }
 
 h2{
-    position: relative;
-    top: 25px;
+    top: 20px;
     text-align: center;
-    font-family: 'Merienda', cursive;
-    font-size: 30px;
-    background: linear-gradient(#1497be, #1c2aec);
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    animation: text 5s linear infinite;
+    position: relative;
+    font-size: 2.5em;
+    color: #4d194d;
 }
-@keyframes text{
-    0%{
-        filter: hue-rotate(0deg);
-    }
-    100%{
-        filter: hue-rotate(360deg);
-    }
-}
+
 

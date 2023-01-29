@@ -26,10 +26,24 @@ session_start();
 </head>
 <body>
 
+  <div class="burbujas">
+    <div class="burbuja"></div>
+    <div class="burbuja"></div>
+    <div class="burbuja"></div>
+    <div class="burbuja"></div>
+    <div class="burbuja"></div>
+    <div class="burbuja"></div>
+    <div class="burbuja"></div>
+    <div class="burbuja"></div>
+    <div class="burbuja"></div>
+    <div class="burbuja"></div>
+ 
+
+
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-<img src="../imagenes/logounillanos.png" class="logouni"><h2 class="lines-effect">Estadísticas</h2>
+<img src="../imagenes/logounillanos.png" class="logouni"><h2 data-text="&nbsp;Estadísticas&nbsp;">&nbsp;Estadísticas&nbsp;</h2>
         <?php   
           $user=$_SESSION['codigo_user'];
           $sql="select count(pr.cod_usuario),nomb_user as prestamo from prestamo pr,usuarios u where u.cod_usuario=pr.cod_usuario GROUP BY u.nomb_user";
@@ -226,7 +240,9 @@ Ver gráfico <i class="fa-solid fa-chevron-down"></i>
     <script src="../javascript/Graphs.js"></script>
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
     
-    <footer>
+    </div>
+
+<footer>
     <div class="waves">
       <div class="wave" id="wave1"></div>
       <div class="wave" id="wave2"></div>
