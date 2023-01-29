@@ -15,12 +15,12 @@ body{
     height: 60px;
     width: 60px;
     position: fixed;
-    top: 5px;
-    left: 10px;
+    top: 15px;
+    left: 30px;
 }
 h1{
-    top: 10px;
     left: 45%;
+    top: 10px;
     display: inline-block;
     position: relative;
     color: #240046;
@@ -53,6 +53,8 @@ h1::after{
 }
 
 .nav{
+    position: relative;
+    top: 30px;
     display: flex;
     justify-content: space-evenly;
     align-items: flex-start;
@@ -90,6 +92,8 @@ h1::after{
 }
 
 h2{
+    position: relative;
+    top: 25px;
     text-align: center;
     font-family: 'Merienda', cursive;
     font-size: 30px;

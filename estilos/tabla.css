@@ -1,8 +1,9 @@
 /* tablas*/
 
-#tabla-container{
-    margin: 150px auto;
-    width: 600px;
+#table-container{
+    position: relative;
+    top: 15px;
+    width: 80%;
 }
 table{
     width: 100%;

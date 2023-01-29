@@ -21,12 +21,7 @@ session_start();
 </head>
 
 <body>
-      
-<section>
-        <div class="wave wave1"></div>
-        <div class="wave wave2"></div>
-        <div class="wave wave3"></div>
-        <div class="wave wave4"></div>
+    
    <!--Scripts de ionicons-->
    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -113,11 +108,6 @@ session_start();
     </table>
   </div>
 
-         
-  <div class="container">
-  </section> 
-    
-  </div>
 
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
