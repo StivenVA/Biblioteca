@@ -21,7 +21,7 @@
     <p>Escriba la fecha de publicacion del libro: </p>
     <input type="date" name="fecha_pub" id="fecha_pub" placeholder="Fecha de publicacion" required>
     <p>Ingrese la cantidad disponible: </p>
-    <input type="number" name="cantidad" id="cantidad" min="1" placeholder="Cantidad">
+    <input type="number" name="cantidad" id="cantidad" min="1" placeholder="Cantidad" required>
     <br> <br>
     <button type="submit">Agregar</button>
     </form>
