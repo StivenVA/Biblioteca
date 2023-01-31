@@ -75,7 +75,7 @@ session_start();
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="prestamos/prestamo.php" method="POST">
+        <form action="Deletebook.php" method="POST">
         ¿Desea eliminar PERMANENTEMENTE <input id="recibirnombre" type="text" name ="nombre_prueba" disabled class="text-center">?
       </div>
         <div class="modal-footer">        
