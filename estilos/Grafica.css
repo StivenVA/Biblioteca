@@ -1,20 +1,20 @@
 #collapseExample{
-    width: 50%;
-    height: 50%;
+    width: 80%;
+    height: 80%;
     position: relative;
-    left: 25%;
+    left: 10%;
 }
 #categorias{
-    width: 50%;
-    height: 50%;
+    width: 80%;
+    height: 80%;
     position: relative;
-    left: 25%;
+    left: 10%;
 }
 #percentage{
-    width: 50%;
-    height: 50%;
+    width: 80%;
+    height: 80%;
     position: relative;
-    left: 25%;
+    left: 10%;
 }
 .card{
     background: linear-gradient(to right, #b8b8ff, #f5f3f4);  
@@ -24,6 +24,8 @@
 p{
     text-align: center;
 }
+
+
 
 /*burbujas*/
 .burbuja{

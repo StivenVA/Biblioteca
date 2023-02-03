@@ -1,7 +1,7 @@
 const ctx = document.getElementById('myChart').getContext("2d");
 
   new Chart(ctx, {
-    type: 'doughnut',
+    type: 'bar',
     data: {
       labels: nombres,
       datasets: [{
@@ -10,6 +10,13 @@ const ctx = document.getElementById('myChart').getContext("2d");
         borderWidth: 1,
         cutout:'85%',
         borderRadius:'20', 
+        borderColor: 'black',
+        backgroundColor: [
+          '#cdb4db',
+          '#fde4cf',
+          '#caf0f8',
+          '#ffccd5'
+        ]
 
       }]
     },
@@ -23,7 +30,7 @@ const ctx = document.getElementById('myChart').getContext("2d");
   const graph = document.getElementById('cats').getContext("2d");
 
   new Chart(graph, {
-    type: 'doughnut',
+    type: 'bar',
     data: {
       labels: cat,
       datasets: [{
@@ -31,7 +38,14 @@ const ctx = document.getElementById('myChart').getContext("2d");
         data: pres,
         borderWidth: 1,
         cutout:'85%',
-        borderRadius:'20'
+        borderRadius:'20',
+        borderColor: 'black',
+        backgroundColor: [
+          '#cdb4db',
+          '#fde4cf',
+          '#caf0f8',
+          '#ffccd5'
+        ]
       }]
     },
     options: {
@@ -43,7 +57,7 @@ const ctx = document.getElementById('myChart').getContext("2d");
   const per = document.getElementById('per').getContext("2d");
 
   new Chart(per, {
-    type: 'doughnut',
+    type: 'bar',
     data: {
       labels: salas,
       datasets: [{
@@ -51,7 +65,14 @@ const ctx = document.getElementById('myChart').getContext("2d");
         data: porcentajes,
         borderWidth: 1,
         cutout:'85%',
-        borderRadius:'20'
+        borderRadius:'20',
+        borderColor: 'black',
+        backgroundColor: [
+          '#cdb4db',
+          '#fde4cf',
+          '#caf0f8',
+          '#ffccd5'
+        ]
       }]
     },
     options: {

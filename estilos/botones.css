@@ -1,6 +1,11 @@
+button{
+    background: none;
+    border: none;
+}
 .btn{
     position: relative;
-    padding: 10px 15px;
+    left: 120%;
+    top: 50%;
     border: none;
     outline: none;
     background: #e0b1cb;

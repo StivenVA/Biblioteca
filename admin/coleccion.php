@@ -61,6 +61,13 @@ session_start();
                     <ion-icon name="library-outline"></ion-icon>
                   </a>
                 </div> 
+
+                <div class="link">
+                  <a href="addbooks.php">    
+                   <span>Agregar un libro</span>
+                   <ion-icon name="duplicate-outline"></ion-icon>
+                  </a>  
+                </div>
 </div>
   </nav>
 </div>
@@ -143,11 +150,7 @@ session_start();
     </table>
   </div>
 
-  <div>
-    <form action="addbooks.php">
-      <button type="submit" class="btn btn-outline-danger"> Agregar un libro </button>
-    </form> 
-  </div>
+ 
   
   <script src="../javascript/script.js"></script>   
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>

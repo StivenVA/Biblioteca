@@ -12,7 +12,7 @@ session_start();
     <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../estilos/admin.css">
     <link rel="stylesheet" href="../estilos/botones.css">
-    <link rel="stylesheet" href="../estilos/graficas.css">
+    <link rel="stylesheet" href="../estilos/Grafica.css">
     <link rel="stylesheet" href="../estilos/footer.css">
     <link rel="stylesheet" href="../fontawesome/css/all.min.css">
 
@@ -27,24 +27,26 @@ session_start();
 <body>
 
     <div class="burbujas">
-    <div class="burbuja"></div>
-    <div class="burbuja"></div>
-    <div class="burbuja"></div>
-    <div class="burbuja"></div>
-    <div class="burbuja"></div>
-    <div class="burbuja"></div>
-    <div class="burbuja"></div>
-    <div class="burbuja"></div>
-    <div class="burbuja"></div>
-    <div class="burbuja"></div>
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
     
  
-
+     
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-<img src="../imagenes/logounillanos.png" class="logouni"><h2 data-text="&nbsp;Estadísticas&nbsp;">&nbsp;Estadísticas&nbsp;</h2>
+<img src="../imagenes/logounillanos.png" class="logouni">
+
+
         <?php   
           $user=$_SESSION['codigo_user'];
           $sql="select count(pr.cod_usuario),nomb_user as prestamo from prestamo pr,usuarios u where u.cod_usuario=pr.cod_usuario GROUP BY u.nomb_user";
@@ -56,8 +58,10 @@ session_start();
 
 
 
-
   <div class="container">
+
+
+
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="nav">
                 <div class="link">
@@ -92,7 +96,19 @@ session_start();
   </nav>
 </div>
 
+<div class="btn">
+  <form action="disparador.php" >
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <button><ion-icon name="document-text-outline"></ion-icon>Ver actividad</button>
+  </form>
+</div>
 
+<br>
+<h2 data-text="&nbsp;Estadísticas&nbsp;">&nbsp;Estadísticas&nbsp;</h2>
+<br>
 
   <div class="container" width="100" height="100">
   
@@ -105,20 +121,9 @@ session_start();
 
         echo $query->nomb_user;
       ?>
-
-    
-
-  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" id="collapse">
-   <span></span> 
-   <span></span> 
-   <span></span> 
-   <span></span> 
-  Ver gráfico <i class="fa-solid fa-chevron-down"></i>
-  </button>
-  </p>
   </div>
 
-<div class="collapse" id="collapseExample" >  
+<div id="collapseExample" >  
     <div class="card card-body" width="100" height="100">
      <canvas id="myChart" ></canvas>
     </div>
@@ -135,37 +140,20 @@ session_start();
 
       echo $query->categoria;
       ?>
-      
-    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#categorias " aria-expanded="false" aria-controls="collapseExample" id="collapse">
-    <span></span> 
-   <span></span> 
-   <span></span> 
-   <span></span>
-    Ver gráfico <i class="fa-solid fa-chevron-down"></i>
-    </button>
-    </p>
     </div>
 
    
 
-<div class="collapse" id="categorias" >
+<div id="categorias" >
   <div class="card card-body" >
   <canvas id="cats" ></canvas>
   </div>
 </div>
 <div class="container" width="100" height="100">
 <p><br> Solicitudes de prestamos por sala:
-<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#percentage " aria-expanded="false" aria-controls="collapseExample" id="collapse">
-<span></span> 
-   <span></span> 
-   <span></span> 
-   <span></span>    
-Ver gráfico <i class="fa-solid fa-chevron-down"></i>
-    </button>
-    </p>
     </div>
 
-<div class="collapse" id="percentage" >
+<div id="percentage" >
   <div class="card card-body" >
   <canvas id="per" ></canvas>
   </div>
@@ -242,7 +230,7 @@ Ver gráfico <i class="fa-solid fa-chevron-down"></i>
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
     
     </div>
-
+<br><br><br>
 <footer>
     <div class="waves">
       <div class="wave" id="wave1"></div>

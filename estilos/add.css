@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Source+Serif+Pro:ital,wght@0,300;0,400;1,300&display=swap');
+body{
+    background: linear-gradient(to left, #b8b8ff, #f5f3f4);  
+}
+
+.logouni{
+    height: 60px;
+    width: 60px;
+    position: fixed;
+    top: 15px;
+    left: 30px;
+}
+
+/*añadir libros*/
+
+.contener{
+    position: absolute;
+    left: 35%;
+    width: 400px;
+    border-radius: 30px;
+    background:#b8b8ff;
+}
+
+.form-box input[type="text"],
+.form-box input[type="date"],
+.form-box input[type="number"],
+.form-box button[type="submit"]{
+    border:0px;
+    font-family: 'Source Serif Pro', serif;
+    position: relative;
+    left: 20%;
+    background:none;
+    padding:10px 5px;
+    text-align: center;
+    border:1px solid #022b3a; 
+    width: 100px;
+    outline: none;
+    color:#10002b;
+    border-radius: 10px;
+    transition: 0.25s;
+    width: 200px;
+}
+
+
+.form-box button[type="submit"]{
+    font-family: Garamond;
+    font-size: 20px;
+    border: 0px;
+    background: #3d348b;
+    color:#e7c6ff;
+    cursor: pointer;
+}
+
+.form-box button[type="submit"]:hover{
+    background:#240046;
+}
+
+.atras{
+    position: fixed;
+    font-size: 2em;
+    right: 20px;
+    top: 20px;
+    color: #3d348b;
+}
